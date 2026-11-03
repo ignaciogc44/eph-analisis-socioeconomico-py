@@ -26,7 +26,7 @@ def load_data():
     ref = json.loads((ROOT/'data/reference.json').read_text(encoding='utf-8'))
     persons = list((ROOT/'data/personas').glob('*.txt'))
     households = list((ROOT/'data/hogares').glob('*.txt'))
-    if not persons or not households: raise FileNotFoundError('Faltan bases EPH en data/personas o data/hogares. Ejecutá preparar_datos.py.')
+    if not persons or not households: raise FileNotFoundError('Faltan bases EPH en data/personas o data/hogares. Descargá las bases con sync_sources.py eph, como indica el README.')
     p = pd.concat([read_microdata(f,PCOLS) for f in sorted(persons)],ignore_index=True)
     h = pd.concat([read_microdata(f,HCOLS) for f in sorted(households)],ignore_index=True)
     if p.duplicated(KEYS+['COMPONENTE']).any() or h.duplicated(KEYS).any(): raise ValueError('Claves duplicadas: revisar bases antes de calcular.')

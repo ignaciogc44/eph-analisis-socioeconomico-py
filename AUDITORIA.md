@@ -1,6 +1,6 @@
 # Auditoría del tablero EPH
 
-Fecha de revisión: 3 de noviembre de 2026. Alcance: proyecto local, instantánea 2024–2025. No se publicó ni se desplegó una aplicación remota.
+Fecha de revisión: 3 de noviembre de 2026. Alcance: proyecto local, instantánea 2024–2025. El código está publicado en GitHub; no se desplegó una aplicación web remota.
 
 ## Datos y tablas
 
@@ -38,15 +38,15 @@ Fuentes de contraste:
 Resultado: no se detectaron credenciales incrustadas ni hallazgos críticos en el alcance local revisado. Esto no garantiza ausencia de vulnerabilidades ni sustituye una revisión del alojamiento futuro.
 
 - Se escanearon archivos de código, configuración, documentación y referencias, excluyendo el entorno de terceros y los microdatos. El control busca formatos comunes de tokens, claves privadas, secretos literales, rutas personales y ejecución dinámica. No se imprimen posibles valores sensibles.
-- Diez ejemplos de archivos sensibles/microdatos fueron comprobados con `git check-ignore` en un repositorio temporal. En la revisión inicial no había un repositorio Git ni historial local que revisar. El primer commit se revisa por separado antes de su publicación.
+- Quince ejemplos de archivos sensibles, microdatos y archivos locales excluidos fueron comprobados con `git check-ignore` en un repositorio temporal. En la revisión inicial no había un repositorio Git ni historial local que revisar. El primer commit se revisa por separado antes de su publicación.
 - `.gitignore` excluye secretos de Streamlit, `.env`, certificados, entornos, microdatos, respuestas API y notebooks con posibles salidas locales. El archivo `.py` de celdas de VS Code permanece publicable.
-- `pip-audit` revisó las versiones de `requirements-lock.txt` con la base de avisos de PyPI y no informó vulnerabilidades conocidas. El resultado se conserva en `auditoria_dependencias.json`. `pip check` no informó conflictos. La base de avisos no detecta vulnerabilidades desconocidas ni asegura la integridad de cada distribución instalada; el lock actual fija versiones sin hashes.
+- `pip-audit` revisó las versiones de `requirements-lock.txt` con la base de avisos de PyPI y no informó vulnerabilidades conocidas. La revisión posterior de las 62 dependencias conservadas tampoco informó vulnerabilidades conocidas; la salida cruda del escáner se conserva localmente, fuera de Git. `pip check` no informó conflictos. La base de avisos no detecta vulnerabilidades desconocidas ni asegura la integridad de cada distribución instalada; el lock actual fija versiones sin hashes.
 - Se revisaron los flujos de descarga y exportación: orígenes HTTPS de INDEC; API opcional con token desde entorno; extracción ZIP mediante nombres base, sin `extractall`; exportación de agregados sin identificadores de hogares/personas. Las descargas son utilidades administrativas locales, no endpoints expuestos al visitante.
 - No hay subida de archivos, ejecución de código aportado por el visitante, consultas SQL ni edición remota de archivos en la interfaz.
 - El HTML propio escapa los valores dinámicos. Se conservan CORS y XSRF activos, servicio de archivos estáticos deshabilitado y escucha local en 127.0.0.1. Se ocultaron detalles técnicos de errores al visitante.
 - Se fijó la versión de Streamlit usada y probada para evitar que el mínimo anterior instalara una interfaz incompatible.
 
-Antes de publicar: revisar el diff/listado exacto del primer commit, atribuir las fuentes y decidir la licencia del código. Antes de alojar una demo: revisar HTTPS, configuración del proveedor, límites de recursos y protección contra abuso. No hace falta autenticar a visitantes si la demo solo ofrece estos agregados públicos. No habilitar acceso a archivos personales o secretos del equipo.
+El contenido del repositorio se revisa antes de cada publicación; no se ha añadido una licencia de cesión del código. Antes de alojar una demo: revisar HTTPS, configuración del proveedor, límites de recursos y protección contra abuso. No hace falta autenticar a visitantes si la demo solo ofrece estos agregados públicos. No habilitar acceso a archivos personales o secretos del equipo.
 
 En GitHub conviene activar revisión de dependencias y protección contra secretos. [Documentación de GitHub](https://docs.github.com/en/code-security/concepts/secret-security/push-protection). Los secretos del alojamiento se configuran fuera del código: [documentación de Streamlit](https://docs.streamlit.io/deploy/concepts/secrets).
 
@@ -70,3 +70,18 @@ La comparación por sexo incorpora un Total calculado con el ponderador correspo
 Se volvió a descargar el XLS oficial del IPC; su SHA-256 coincide con el conservado. Se recalcularon desde los TXT los 40 puntos de las cinco ramas mostradas en ocho trimestres. Todos coinciden con ingreso nominal ponderado multiplicado por IPC diciembre de 2025 / IPC medio del trimestre. No se encontró una serie nominal rotulada como real ni un ajuste duplicado.
 
 Ejemplo, industria manufacturera: 1T2024, nominal $376.061 y real a diciembre de 2025 $790.531; 4T2025, nominal $1.303.247 y real $1.338.401. El factor del 4T2025 es 1,026974, no 1, porque se utiliza el IPC medio del trimestre y no el índice de diciembre como denominador. Se mantiene la aproximación trimestral documentada, con la limitación del mes de referencia de los ingresos.
+
+
+## Revisión del repositorio publicado
+
+- Se retiraron de la versión actual `.vscode/settings.json`, `preparar_datos.py`, `data/ipc_oficial.xls`, `auditoria_dependencias.json` y el comparador heredado `revision_pagina7_corregida.json`. Los archivos originales se conservan en la PC, excluidos de Git.
+- El comparador heredado fue sustituido por `ingresos_sector_nominales.json`: conserva las 173 medias nominales usadas en las pruebas y elimina campos de precios reales antiguos y metadatos del modelo anterior. Las 243 conciliaciones numéricas siguen pasando.
+- Se redujo el conjunto de dependencias fijadas de 70 a 62, retirando paquetes sin uso en la distribución. La aplicación, las celdas de VS Code y la lectura del IPC mantienen sus dependencias.
+- El auditor de seguridad revisa archivos publicables, el índice exacto y los blobs del historial Git. No se detectaron secretos, datos individuales ni rutas personales en ese alcance. La identidad de los commits usa correo noreply de GitHub.
+- El PDF publicado no contiene JavaScript, acciones de ejecución ni adjuntos. La captura no contiene EXIF. El nombre del autor es una atribución profesional deliberada.
+- Las validaciones del IPC ahora lanzan errores explícitos y permanecen activas con Python optimizado. Las descargas ZIP controlan tamaño, nombres, período y duplicados. La API opcional admite únicamente los datasets previstos.
+- Bandit revisó el código de ejecución: no produjo avisos críticos ni altos. Los avisos sobre apertura de URLs fueron revisados: los orígenes son HTTPS fijos del INDEC; no se admite una URL elegida por visitantes. No se ocultaron esos avisos con exclusiones generales.
+- GitHub tiene activadas la detección de secretos, la protección de push y las alertas de vulnerabilidades. Las consultas devolvieron cero alertas abiertas de secretos y dependencias en el momento de la revisión.
+- La limpieza usa un commit normal: los archivos retirados de la versión actual siguen formando parte del historial inicial. Se revisó ese historial y no se identificaron secretos que exigieran purgarlo. No se reescribió ni se forzó el historial remoto.
+
+La revisión cubre el repositorio y el código local; no es una certificación de seguridad ni una revisión de un futuro alojamiento.

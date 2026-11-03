@@ -1,4 +1,4 @@
-"""Pruebas de conciliación con resultados independientes y el modelo Power BI auditado."""
+"""Pruebas de conciliación con recálculos independientes y resultados del INDEC."""
 import json, math
 import pandas as pd
 import metrics as m
@@ -20,12 +20,10 @@ def run():
     near(m.share(d[d.CH06.ge(10)],d.loc[d.CH06.ge(10),'CH09'].eq(2)),benchmark['educacion']['no_lee_10_mas'])
     near(m.share(d[d.CH06.ge(18)],d.loc[d.CH06.ge(18),'NIVEL_ED'].isin([4,5,6])),benchmark['educacion']['secundaria_completa_18_mas'])
     for key,col in [('sin_agua','IV7'),('sin_gas','II8'),('sin_cloaca','IV11')]: near(m.share(d,d[col].ne(1)),benchmark['vivienda_4t2025'][key]['personas_4t'])
-    expected=json.loads((m.ROOT/'data/benchmarks/revision_pagina7_corregida.json').read_text(encoding='utf-8'))
-    key=next(k for k in expected['serie'][0] if k.startswith('.Calendar'))
+    expected=json.loads((m.ROOT/'data/benchmarks/ingresos_sector_nominales.json').read_text(encoding='utf-8'))
     for row in expected['serie']:
-        if row.get('[Real]') is None: continue
-        a=m.eligible_salary(m.select(p,row[key]));a=a[a.Sector.eq(row['CAES[Seccion_desc]'])]
-        near(m.mean(a,'P21','PONDIIO'),row['[Nominal]'])
+        a=m.eligible_salary(m.select(p,row['periodo']));a=a[a.Sector.eq(row['sector'])]
+        near(m.mean(a,'P21','PONDIIO'),row['ingreso_nominal'])
     # INDEC, Mercado de trabajo 4T2025, cuadros 1.1 y 1.5.
     for label,value in [('Actividad',48.6),('Empleo',45.0),('Desocupación',7.5),('Sin descuento jubilatorio',36.3)]:
         near(round(m.rates(d)[label],1),value,1e-8)

@@ -9,16 +9,16 @@ URL='https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_01_26.xls'
 def update():
     raw=urllib.request.urlopen(URL,timeout=60).read()
     sheet=pd.read_excel(io.BytesIO(raw),sheet_name=2,header=None,engine='xlrd')
-    assert sheet.iloc[5,0].strip()=='Total nacional'
-    assert sheet.iloc[9,0].strip()=='Nivel general'
+    if str(sheet.iloc[5,0]).strip()!='Total nacional': raise ValueError('El XLS no corresponde al IPC nacional esperado.')
+    if str(sheet.iloc[9,0]).strip()!='Nivel general': raise ValueError('No se encontró el nivel general del IPC.')
     dates=pd.to_datetime(sheet.iloc[5,1:],errors='coerce')
     values=pd.to_numeric(sheet.iloc[9,1:],errors='coerce')
     d=pd.DataFrame({'Fecha':dates.to_numpy(),'Indice':values.to_numpy()}).dropna()
     d=d.loc[d.Fecha.between('2024-01-01','2025-12-01')].copy()
-    assert len(d)==24 and not d.Fecha.duplicated().any()
+    if len(d)!=24 or d.Fecha.duplicated().any(): raise ValueError('La serie debe contener 24 meses únicos de 2024-2025.')
     d['Periodo']=d.Fecha.dt.year.astype(str)+' - '+d.Fecha.dt.quarter.astype(str)+'T'
     base=float(d.loc[d.Fecha.eq('2025-12-01'),'Indice'].iloc[0])
-    assert base>0 and d.groupby('Periodo').size().eq(3).all()
+    if base<=0 or not d.groupby('Periodo').size().eq(3).all(): raise ValueError('Base del IPC o composición trimestral inválida.')
     refpath=ROOT/'data/reference.json'
     ref=json.loads(refpath.read_text(encoding='utf-8'))
     old=ROOT/'data/benchmarks/ipc_inicial.json'

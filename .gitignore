@@ -28,3 +28,10 @@ Thumbs.db
 tmp/
 PUBLICACION.md
 data/benchmarks/ipc_inicial.json
+
+# Herramientas y referencias locales que no forman parte de la distribución
+.vscode/
+preparar_datos.py
+data/ipc_oficial.xls
+auditoria_dependencias.json
+data/benchmarks/revision_pagina7_corregida.json

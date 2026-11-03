@@ -117,3 +117,8 @@ output/pdf/              Presentación para LinkedIn
 Los microdatos individuales, el entorno virtual, los secretos y los archivos temporales se excluyen de Git. El repositorio conserva referencias y resultados agregados. La app se ejecuta localmente; el repositorio no implica que exista una demo pública desplegada.
 
 **Autor:** José Ignacio González Cabañas.
+
+
+## Seguridad del repositorio
+
+Los controles incluyen el índice y el historial Git, metadatos de los archivos de presentación y vulnerabilidades conocidas de las dependencias. Los resultados y sus límites están documentados en [la auditoría](AUDITORIA.md). Los archivos locales de preparación y los informes crudos de herramientas no forman parte de la distribución.
