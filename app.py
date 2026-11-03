@@ -1,0 +1,132 @@
+from pathlib import Path
+import json
+import html
+import textwrap
+import pandas as pd
+import charts as charts
+import streamlit as st
+import metrics as m
+from formatting import display_table, export_table
+from ui import icon, metric_cards, CHART_ICONS
+
+st.set_page_config(page_title='EPH | Panorama socioeconómico',page_icon='📊',layout='wide')
+st.markdown('<style>'+Path(__file__).with_name('editorial.css').read_text(encoding='utf-8')+'</style>',unsafe_allow_html=True)
+PAGES=['Vivienda y servicios','Educación','Mercado de trabajo','Composición del mercado laboral','Empleo por sector de actividad','Ingresos y distribución','Evolución del ingreso laboral']
+@st.cache_data(show_spinner='Cargando bases oficiales de la EPH…')
+def data(source_version): return m.load_data()
+try: p,h,ref=data((m.ROOT/'data/reference.json').stat().st_mtime_ns)
+except Exception as e:
+    st.error('No se pudieron cargar los datos. Verificá que estén disponibles las bases oficiales y sus referencias.');st.stop()
+
+SECTIONS = ['Panorama','Condiciones de vida','Trabajo','Ingresos']
+VIEWS = {
+ 'Condiciones de vida': {'Vivienda y servicios':PAGES[0], 'Educación':PAGES[1]},
+ 'Trabajo': {'Participación y evolución':PAGES[2], 'Composición del empleo':PAGES[3], 'Sectores de actividad':PAGES[4]},
+ 'Ingresos': {'Distribución y brechas':PAGES[5], 'Evolución por sector':PAGES[6]},
+}
+st.markdown(
+    '<div class="eph-masthead"><span class="eph-brand">'+icon('chart')+' EPH</span><span>MICRODATOS DEL INDEC · ARGENTINA</span></div>'
+    '<div class="eph-hero"><div class="eph-hero-copy"><h1 class="eph-title">Panorama socioeconómico</h1>'
+    '<div class="eph-deck">Vivienda, educación, mercado de trabajo e ingresos de la población urbana.</div>'
+    '<div class="eph-tags"><span class="eph-tag">'+icon('pin')+'31 aglomerados urbanos</span>'
+    '<span class="eph-tag">'+icon('calendar')+str(int(p.ANO4.min()))+'–'+str(int(p.ANO4.max()))+'</span></div></div>'
+    '<div class="eph-hero-symbol">'+icon('people')+'</div></div>',unsafe_allow_html=True)
+
+def reset_filters():
+    for k in ['regions','cities','sexes']: st.session_state[k]=[]
+
+def prune_cities():
+    valid=set(m.select(p,regions=st.session_state.get('regions',[])).Aglomerado)
+    st.session_state['cities']=[x for x in st.session_state.get('cities',[]) if x in valid]
+
+periods=sorted(p.Periodo.unique())
+unit='Personas';territory='Región';sectors=None
+if st.session_state.get('section') not in SECTIONS:
+    st.session_state['section']='Condiciones de vida' if st.session_state.get('section')=='Vida cotidiana' else 'Panorama'
+with st.container(key='explorer'):
+    section=st.segmented_control('Área',SECTIONS,format_func=lambda x: ':material/'+{'Panorama':'space_dashboard','Condiciones de vida':'home','Trabajo':'work_outline','Ingresos':'payments'}[x]+': '+x,required=True,key='section',label_visibility='collapsed',width='stretch') or 'Panorama'
+    page=None
+    if section!='Panorama':
+        labels=list(VIEWS[section])
+        view=st.segmented_control('Vista',labels,default=labels[0],required=True,key='view_'+section,label_visibility='collapsed',width='content')
+        page=VIEWS[section][view]
+    widths=[1.2,1,1,.8] if page==PAGES[0] else [1,4]
+    controls=st.columns(widths,vertical_alignment='bottom')
+    with controls[0]:
+        period=st.selectbox('Período',periods,index=len(periods)-1,key='period')
+    if page==PAGES[0]:
+        with controls[1]: unit=st.selectbox('Unidad estadística',['Personas','Hogares'],key='housing_unit')
+        with controls[2]: territory=st.selectbox('Desagregación',['Región','Aglomerado'],key='housing_territory')
+    count=sum(len(st.session_state.get(k,[])) for k in ['regions','cities','sexes'])
+    with controls[-1]:
+        with st.popover('Filtros'+(f' · {count}' if count else ''),icon=':material/tune:',width='content'):
+            regions=st.multiselect('Región',sorted(p['Región'].unique()),key='regions',on_change=prune_cities)
+            available=m.select(p,regions=regions)
+            cities=st.multiselect('Aglomerado',sorted(available.Aglomerado.unique()),key='cities')
+            sexes=st.multiselect('Sexo · indicadores de personas',['Mujer','Varón'],key='sexes')
+            st.caption('Sin selección se incluyen todas las categorías. El sexo solo filtra indicadores de personas.')
+            st.button('Limpiar filtros',icon=':material/restart_alt:',on_click=reset_filters,width='stretch')
+    if page==PAGES[6]:
+        salary_history=m.select(p,None,regions,cities,sexes)
+        options=sorted(m.eligible_salary(salary_history).Sector.unique())
+        sectors=st.multiselect('Sectores a comparar',options,default=[s for s in charts.DEFAULT_SECTORS if s in options],key='income_sectors')
+    scope=' / '.join(regions+cities) if regions or cities else '31 aglomerados urbanos'
+    st.markdown('<div class="eph-scope">'+icon('pin')+html.escape(f'{period} · {scope}'+(' · '+', '.join(sexes) if sexes else '')+' · INDEC, EPH')+'</div>',unsafe_allow_html=True)
+
+pt=m.select(p,period,regions,cities,sexes)
+pt_total=m.select(p,period,regions,cities)
+ht=m.select(h,period,regions,cities)
+history=m.select(p,None,regions,cities,sexes)
+if pt.empty or ht.empty:
+    st.info('No hay observaciones para esta selección. Ajustá los filtros.');st.stop()
+
+def metric_grid(values):
+    st.markdown(metric_cards(values),unsafe_allow_html=True)
+
+# Las figuras se construyen en charts.py, compartido con graficos_vscode.py.
+view_name='Panorama' if section=='Panorama' else page
+if page==PAGES[0] and unit=='Hogares' and sexes:
+    st.caption('El filtro de sexo no se aplica a hogares.')
+if page==PAGES[6] and not sectors:
+    st.info('Seleccioná al menos un sector para comparar.');st.stop()
+
+values=charts.cards(view_name,pt,ht,ref,period)
+
+if values: metric_grid(values)
+if view_name in ['Panorama',PAGES[5]]:
+    st.caption('Ingresos en pesos de diciembre de 2025, ajustados por IPC nacional; asalariados con ingreso positivo. IPCF: media entre hogares. El filtro de sexo solo afecta a personas.')
+try:
+    specs=charts.build(view_name,pt,ht,history,ref,period,unit,territory,sectors,population=pt_total)
+except ValueError as e:
+    st.error(str(e));st.stop()
+for spec in specs:
+    with st.container(key='panel_'+spec.identity):
+        st.markdown('<div class="eph-chart-heading"><span class="eph-chart-icon">'+icon(CHART_ICONS.get(spec.identity,'chart'))+'</span><h3>'+html.escape(spec.title)+'</h3></div>',unsafe_allow_html=True)
+        if 'Ingreso' in spec.rows:
+            st.markdown('<div class="eph-unit">Pesos de diciembre de 2025 · Ajustados por IPC nacional</div>',unsafe_allow_html=True)
+        if spec.figure is not None:
+            st.plotly_chart(spec.figure,width='stretch',key=spec.identity,config={'responsive':True,'displayModeBar':False,'scrollZoom':False})
+            st.caption(spec.note)
+            if 'Casos muestrales' in spec.rows and spec.rows['Casos muestrales'].between(1,9).any():
+                st.warning('Hay estimaciones con una base reducida de observaciones; interpretalas con cautela.')
+            with st.container(key='data_'+spec.identity):
+                table_label='Datos del gráfico · Pesos de diciembre de 2025' if 'Ingreso' in spec.rows else 'Datos del gráfico'
+                st.markdown('<div class="eph-table-label">'+icon('table')+table_label+'</div>',unsafe_allow_html=True)
+                st.dataframe(display_table(spec.rows),width='stretch',hide_index=True,row_height=32)
+                st.download_button('Descargar CSV',icon=':material/download:',data=export_table(spec.rows).to_csv(index=False,decimal=',',sep=';').encode('utf-8-sig'),file_name=f'eph_{spec.identity}_{period}.csv',mime='text/csv',key='download_'+spec.identity)
+        else:
+            st.dataframe(display_table(spec.rows),width='stretch',hide_index=True,row_height=32)
+            st.caption(spec.note)
+            st.download_button('Descargar tabla',icon=':material/download:',data=export_table(spec.rows).to_csv(index=False,decimal=',',sep=';').encode('utf-8-sig'),file_name=f'eph_{spec.identity}_{period}.csv',key='table_'+spec.identity)
+if section=='Panorama':
+    st.subheader('Seguí explorando')
+    def navigate(destination): st.session_state['section']=destination
+    for col,destination,label in zip(st.columns(3),SECTIONS[1:],['Vivienda y educación','Participación y empleo','Ingresos y brechas']):
+        col.button(label,icon={'Condiciones de vida':':material/home:','Trabajo':':material/work_outline:','Ingresos':':material/payments:'}[destination],on_click=navigate,args=(destination,),width='stretch')
+
+with st.expander('Fuentes y metodología',icon=':material/menu_book:'):
+    st.markdown('[Mercado de trabajo · INDEC](https://www.indec.gob.ar/uploads/informesdeprensa/mercado_trabajo_eph_4trim25AF451E16DE.pdf) · [Condiciones de vida · INDEC](https://www.indec.gob.ar/uploads/informesdeprensa/eph_indicadores_hogares_04_266C2447C938.pdf) · [Encuesta Permanente de Hogares · INDEC](https://www.indec.gob.ar/indec/web/Institucional-Indec-BasesDeDatos-1) · [Distribución del ingreso](https://biblioteca.indec.gob.ar/bases/minde/ingresos4trim25.pdf)')
+    st.write('Cobertura: 31 aglomerados urbanos. Las estimaciones se recalculan para la población y el período seleccionados, con los ponderadores específicos de cada indicador.')
+    st.write('Los ingresos se expresan en pesos constantes. El IPCF se promedia entre hogares; el ingreso laboral corresponde a asalariados ocupados con ingresos positivos. Las notas de cada gráfico detallan su universo.')
+
+st.markdown('<div class="eph-footer">'+icon('table')+'<span>Elaboración propia en base a INDEC · Encuesta Permanente de Hogares.<br>31 aglomerados urbanos · Ingresos expresados a precios de diciembre de 2025.</span></div>',unsafe_allow_html=True)

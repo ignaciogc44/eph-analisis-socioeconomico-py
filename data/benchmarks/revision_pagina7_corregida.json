@@ -1,0 +1,1953 @@
+{
+  "serie": [
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Agricultura, Ganadería, Caza, Silvicultura y Pesca",
+      "[Nominal]": 361830.921178192,
+      "[Real]": 846457.133306667,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Explotación de Minas y Canteras",
+      "[Nominal]": 803229.4416897418,
+      "[Real]": 1879052.482265277,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Industria Manufacturera",
+      "[Nominal]": 376060.86975188385,
+      "[Real]": 879746.2768590408,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Suministro de Electricidad, Gas, Vapor y Aire Acondicionado",
+      "[Nominal]": 836859.983599836,
+      "[Real]": 1957726.8310580074,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Suministro de Agua; Alcantarillado, Gestión de Desechos",
+      "[Nominal]": 368576.2302852711,
+      "[Real]": 862236.9207042003,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Construcción",
+      "[Nominal]": 280056.48518104444,
+      "[Real]": 655156.3057087216,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Comercio",
+      "[Nominal]": 318677.5780679791,
+      "[Real]": 745505.4098256297,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Transporte y Almacenamiento",
+      "[Nominal]": 427091.6718506108,
+      "[Real]": 999126.3074937242,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Alojamiento y Servicios de Comidas",
+      "[Nominal]": 242964.7429640575,
+      "[Real]": 568384.9217592591,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Información y Comunicación",
+      "[Nominal]": 735897.277254559,
+      "[Real]": 1721537.5006778685,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Actividades Financieras y de Seguros",
+      "[Nominal]": 753421.7439110026,
+      "[Real]": 1762533.747655435,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Actividades Inmobiliarias",
+      "[Nominal]": 314035.44024289266,
+      "[Real]": 734645.7224803849,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Actividades Profesionales",
+      "[Nominal]": 506584.2122664903,
+      "[Real]": 1185088.9324141983,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Actividades Administrativas",
+      "[Nominal]": 280457.22160462296,
+      "[Real]": 656093.7772858033,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Administración Pública",
+      "[Nominal]": 449124.21113770735,
+      "[Real]": 1050668.613451699,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Enseñanza",
+      "[Nominal]": 359083.2903987754,
+      "[Real]": 840029.4027374912,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Salud Humana y Servicios Sociales",
+      "[Nominal]": 371608.99390924454,
+      "[Real]": 869331.6830721768,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Artes, Entretenimiento y Recreación",
+      "[Nominal]": 256271.57007971956,
+      "[Real]": 599514.5408008104,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Otras Actividades de Servicios",
+      "[Nominal]": 295675.4731303151,
+      "[Real]": 691694.9291122757,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Hogares como empleadores",
+      "[Nominal]": 109459.15139794815,
+      "[Real]": 256065.67621361135,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Organismos Extraterritoriales",
+      "[Nominal]": 450000,
+      "[Real]": 1052717.4094123766,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": "Actividad no especificada",
+      "[Nominal]": 431060.32946556335,
+      "[Real]": 1008410.4740787409,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Agricultura, Ganadería, Caza, Silvicultura y Pesca",
+      "[Nominal]": 508643.07687842817,
+      "[Real]": 870006.6183128298,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Explotación de Minas y Canteras",
+      "[Nominal]": 1356855.8124980442,
+      "[Real]": 2320828.869261653,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Industria Manufacturera",
+      "[Nominal]": 542242.5180433859,
+      "[Real]": 927476.6547960208,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Suministro de Electricidad, Gas, Vapor y Aire Acondicionado",
+      "[Nominal]": 930218.142797504,
+      "[Real]": 1591088.088085644,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Suministro de Agua; Alcantarillado, Gestión de Desechos",
+      "[Nominal]": 456571.4198690289,
+      "[Real]": 780940.8504216826,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Construcción",
+      "[Nominal]": 354790.2932284291,
+      "[Real]": 606849.709065555,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Comercio",
+      "[Nominal]": 430332.7255365367,
+      "[Real]": 736060.9753917279,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Transporte y Almacenamiento",
+      "[Nominal]": 613328.3141337294,
+      "[Real]": 1049065.084636022,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Alojamiento y Servicios de Comidas",
+      "[Nominal]": 335953.4986222073,
+      "[Real]": 574630.385299689,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Información y Comunicación",
+      "[Nominal]": 959114.827392708,
+      "[Real]": 1640514.31246171,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Actividades Financieras y de Seguros",
+      "[Nominal]": 1089709.8482352258,
+      "[Real]": 1863890.0696802607,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Actividades Inmobiliarias",
+      "[Nominal]": 365176.4762201106,
+      "[Real]": 624614.7163025076,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Actividades Profesionales",
+      "[Nominal]": 674583.5772509417,
+      "[Real]": 1153838.9167021685,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Actividades Administrativas",
+      "[Nominal]": 454186.2988580447,
+      "[Real]": 776861.2292504518,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Administración Pública",
+      "[Nominal]": 631878.3930709063,
+      "[Real]": 1080793.996675115,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Enseñanza",
+      "[Nominal]": 461720.91316439206,
+      "[Real]": 789748.7816637985,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Salud Humana y Servicios Sociales",
+      "[Nominal]": 516758.83054924896,
+      "[Real]": 883888.1783441646,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Artes, Entretenimiento y Recreación",
+      "[Nominal]": 414054.4721742207,
+      "[Real]": 708217.8987756021,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Otras Actividades de Servicios",
+      "[Nominal]": 471691.680592894,
+      "[Real]": 806803.2429290366,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Hogares como empleadores",
+      "[Nominal]": 141477.29113233543,
+      "[Real]": 241989.29508977066,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Organismos Extraterritoriales",
+      "[Nominal]": 1400000,
+      "[Real]": 2394624.68085274,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": "Actividad no especificada",
+      "[Nominal]": 741233.3735693198,
+      "[Real]": 1267839.8075863088,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Agricultura, Ganadería, Caza, Silvicultura y Pesca",
+      "[Nominal]": 747820.5407932673,
+      "[Real]": 1112675.3248676066,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Explotación de Minas y Canteras",
+      "[Nominal]": 2500700.6458342923,
+      "[Real]": 3720769.558627983,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Industria Manufacturera",
+      "[Nominal]": 773831.114202949,
+      "[Real]": 1151376.2185177198,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Suministro de Electricidad, Gas, Vapor y Aire Acondicionado",
+      "[Nominal]": 1100812.114365169,
+      "[Real]": 1637888.2501277355,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Suministro de Agua; Alcantarillado, Gestión de Desechos",
+      "[Nominal]": 823272.6122124932,
+      "[Real]": 1224939.7700101074,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Construcción",
+      "[Nominal]": 437959.59524138976,
+      "[Real]": 651636.0655153672,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Comercio",
+      "[Nominal]": 597744.9618401199,
+      "[Real]": 889379.2471893257,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Transporte y Almacenamiento",
+      "[Nominal]": 724835.3799298556,
+      "[Real]": 1078475.9148009862,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Alojamiento y Servicios de Comidas",
+      "[Nominal]": 420304.79185253143,
+      "[Real]": 625367.6454538725,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Información y Comunicación",
+      "[Nominal]": 1126050.2847638354,
+      "[Real]": 1675439.8924209676,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Actividades Financieras y de Seguros",
+      "[Nominal]": 1173612.7503554237,
+      "[Real]": 1746207.64881007,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Actividades Inmobiliarias",
+      "[Nominal]": 606593.9679108115,
+      "[Real]": 902545.6021733943,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Actividades Profesionales",
+      "[Nominal]": 807816.1682832267,
+      "[Real]": 1201942.268828806,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Actividades Administrativas",
+      "[Nominal]": 564361.0624295531,
+      "[Real]": 839707.6493985015,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Administración Pública",
+      "[Nominal]": 806479.0762830491,
+      "[Real]": 1199952.8219033482,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Enseñanza",
+      "[Nominal]": 577975.8423355283,
+      "[Real]": 859964.9555682577,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Salud Humana y Servicios Sociales",
+      "[Nominal]": 620876.5018058983,
+      "[Real]": 923796.4533800095,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Artes, Entretenimiento y Recreación",
+      "[Nominal]": 550590.6900472447,
+      "[Real]": 819218.8386100469,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Otras Actividades de Servicios",
+      "[Nominal]": 561444.3555142919,
+      "[Real]": 835367.9079265177,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Hogares como empleadores",
+      "[Nominal]": 179501.11122574707,
+      "[Real]": 267078.0573041498,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Actividad no especificada",
+      "[Nominal]": 538556.867742849,
+      "[Real]": 801313.824757741,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Agricultura, Ganadería, Caza, Silvicultura y Pesca",
+      "[Nominal]": 844641.4606095457,
+      "[Real]": 1137252.856582235,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Explotación de Minas y Canteras",
+      "[Nominal]": 2028720.6491420844,
+      "[Real]": 2731535.759302185,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Industria Manufacturera",
+      "[Nominal]": 880090.3102086858,
+      "[Real]": 1184982.3457788497,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Suministro de Electricidad, Gas, Vapor y Aire Acondicionado",
+      "[Nominal]": 1079202.9124353325,
+      "[Real]": 1453074.058326754,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Suministro de Agua; Alcantarillado, Gestión de Desechos",
+      "[Nominal]": 1007320.3435521284,
+      "[Real]": 1356289.019214539,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Construcción",
+      "[Nominal]": 519828.83210283285,
+      "[Real]": 699914.5220933434,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Comercio",
+      "[Nominal]": 702784.9795592197,
+      "[Real]": 946252.6561152067,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Transporte y Almacenamiento",
+      "[Nominal]": 948948.6590679926,
+      "[Real]": 1277695.4762511211,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Alojamiento y Servicios de Comidas",
+      "[Nominal]": 478281.8332680726,
+      "[Real]": 643974.2855423792,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Información y Comunicación",
+      "[Nominal]": 1245523.088000203,
+      "[Real]": 1677012.97630493,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Actividades Financieras y de Seguros",
+      "[Nominal]": 1290551.6966642332,
+      "[Real]": 1737640.9660724893,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Actividades Inmobiliarias",
+      "[Nominal]": 780818.046501521,
+      "[Real]": 1051318.9267479107,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Actividades Profesionales",
+      "[Nominal]": 1118250.0358230341,
+      "[Real]": 1505648.3809061076,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Actividades Administrativas",
+      "[Nominal]": 698056.6263268376,
+      "[Real]": 939886.2468501728,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Administración Pública",
+      "[Nominal]": 913413.4692118332,
+      "[Real]": 1229849.7357117624,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Enseñanza",
+      "[Nominal]": 673163.135449596,
+      "[Real]": 906368.8374750558,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Salud Humana y Servicios Sociales",
+      "[Nominal]": 791452.3307194887,
+      "[Real]": 1065637.2744357728,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Artes, Entretenimiento y Recreación",
+      "[Nominal]": 505341.3614452403,
+      "[Real]": 680408.1183014809,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Otras Actividades de Servicios",
+      "[Nominal]": 653088.5692694962,
+      "[Real]": 879339.7857440503,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Hogares como empleadores",
+      "[Nominal]": 217280.2217324456,
+      "[Real]": 292553.18897762924,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Organismos Extraterritoriales",
+      "[Nominal]": 376415.09433962265,
+      "[Real]": 506817.58031328337,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": "Actividad no especificada",
+      "[Nominal]": 834743.3134394342,
+      "[Real]": 1123925.6678648388,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Agricultura, Ganadería, Caza, Silvicultura y Pesca",
+      "[Nominal]": 1065885.0201292015,
+      "[Real]": 1332815.2440859051,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Explotación de Minas y Canteras",
+      "[Nominal]": 2308638.697600934,
+      "[Real]": 2886792.469300467,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Industria Manufacturera",
+      "[Nominal]": 943488.5708608072,
+      "[Real]": 1179766.9787231656,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Suministro de Electricidad, Gas, Vapor y Aire Acondicionado",
+      "[Nominal]": 1414009.5825405195,
+      "[Real]": 1768120.8491560447,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Suministro de Agua; Alcantarillado, Gestión de Desechos",
+      "[Nominal]": 968464.1100491863,
+      "[Real]": 1210997.1571485098,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Construcción",
+      "[Nominal]": 624351.3500439399,
+      "[Real]": 780708.0325636902,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Comercio",
+      "[Nominal]": 771384.1109134431,
+      "[Real]": 964562.295796658,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Transporte y Almacenamiento",
+      "[Nominal]": 949889.6929395659,
+      "[Real]": 1187771.137637783,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Alojamiento y Servicios de Comidas",
+      "[Nominal]": 559604.4002205473,
+      "[Real]": 699746.4653186392,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Información y Comunicación",
+      "[Nominal]": 1313642.504494945,
+      "[Real]": 1642618.783644995,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Actividades Financieras y de Seguros",
+      "[Nominal]": 1569257.3374697058,
+      "[Real]": 1962247.3923310775,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Actividades Inmobiliarias",
+      "[Nominal]": 939326.3360428917,
+      "[Real]": 1174562.392947009,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Actividades Profesionales",
+      "[Nominal]": 1052439.4127402941,
+      "[Real]": 1316002.4451859286,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Actividades Administrativas",
+      "[Nominal]": 738559.3005725549,
+      "[Real]": 923517.1485431003,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Administración Pública",
+      "[Nominal]": 958343.5910578159,
+      "[Real]": 1198342.1505248833,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Enseñanza",
+      "[Nominal]": 749034.1104238416,
+      "[Real]": 936615.1712988792,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Salud Humana y Servicios Sociales",
+      "[Nominal]": 923497.6121624524,
+      "[Real]": 1154769.6722652614,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Artes, Entretenimiento y Recreación",
+      "[Nominal]": 705258.2644702386,
+      "[Real]": 881876.5140254651,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Otras Actividades de Servicios",
+      "[Nominal]": 739724.2318916173,
+      "[Real]": 924973.8143100807,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Hogares como empleadores",
+      "[Nominal]": 252791.3531327191,
+      "[Real]": 316098.04309619707,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Actividad no especificada",
+      "[Nominal]": 1063200.737182142,
+      "[Real]": 1329458.7345527783,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Agricultura, Ganadería, Caza, Silvicultura y Pesca",
+      "[Nominal]": 692082.7209445767,
+      "[Real]": 796506.2390286311,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Explotación de Minas y Canteras",
+      "[Nominal]": 2897845.401275647,
+      "[Real]": 3335081.0127237975,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Industria Manufacturera",
+      "[Nominal]": 1062278.599802564,
+      "[Real]": 1222558.3831576384,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Suministro de Electricidad, Gas, Vapor y Aire Acondicionado",
+      "[Nominal]": 1638278.8057190918,
+      "[Real]": 1885467.2288923252,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Suministro de Agua; Alcantarillado, Gestión de Desechos",
+      "[Nominal]": 954494.3900491658,
+      "[Real]": 1098511.3683438883,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Construcción",
+      "[Nominal]": 698472.061995589,
+      "[Real]": 803859.6230337502,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Comercio",
+      "[Nominal]": 837761.982189359,
+      "[Real]": 964166.024437207,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Transporte y Almacenamiento",
+      "[Nominal]": 1242559.137653455,
+      "[Real]": 1430040.1896354672,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Alojamiento y Servicios de Comidas",
+      "[Nominal]": 702934.6242823016,
+      "[Real]": 808995.5101117706,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Información y Comunicación",
+      "[Nominal]": 1677058.4480419569,
+      "[Real]": 1930098.0600382083,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Actividades Financieras y de Seguros",
+      "[Nominal]": 1604501.1507825174,
+      "[Real]": 1846593.1000020413,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Actividades Inmobiliarias",
+      "[Nominal]": 787668.007390883,
+      "[Real]": 906513.7203740856,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Actividades Profesionales",
+      "[Nominal]": 1205606.5853612276,
+      "[Real]": 1387512.12534769,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Actividades Administrativas",
+      "[Nominal]": 855702.77611789,
+      "[Real]": 984813.7791993814,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Administración Pública",
+      "[Nominal]": 1100572.7508759787,
+      "[Real]": 1266630.4706772491,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Enseñanza",
+      "[Nominal]": 791284.0483530598,
+      "[Real]": 910675.3604494598,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Salud Humana y Servicios Sociales",
+      "[Nominal]": 1022230.1720890055,
+      "[Real]": 1176467.3284733081,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Artes, Entretenimiento y Recreación",
+      "[Nominal]": 811883.06354607,
+      "[Real]": 934382.4168786176,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Otras Actividades de Servicios",
+      "[Nominal]": 856291.4668536421,
+      "[Real]": 985491.2933601813,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Hogares como empleadores",
+      "[Nominal]": 270378.2558353305,
+      "[Real]": 311173.7385620504,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Organismos Extraterritoriales",
+      "[Nominal]": 9400000,
+      "[Real]": 10818300.212220902,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": "Actividad no especificada",
+      "[Nominal]": 1197632.517048977,
+      "[Real]": 1378334.905675915,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Agricultura, Ganadería, Caza, Silvicultura y Pesca",
+      "[Nominal]": 893867.1918702219,
+      "[Real]": 974801.8606932538,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Explotación de Minas y Canteras",
+      "[Nominal]": 2920256.448119709,
+      "[Real]": 3184669.3168954174,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Industria Manufacturera",
+      "[Nominal]": 1122966.2783118787,
+      "[Real]": 1224644.5865227927,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Suministro de Electricidad, Gas, Vapor y Aire Acondicionado",
+      "[Nominal]": 1873523.7848408453,
+      "[Real]": 2043160.872360422,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Suministro de Agua; Alcantarillado, Gestión de Desechos",
+      "[Nominal]": 1521444.1194038994,
+      "[Real]": 1659202.3647636664,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Construcción",
+      "[Nominal]": 767649.151881144,
+      "[Real]": 837155.483968117,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Comercio",
+      "[Nominal]": 903975.5433541301,
+      "[Real]": 985825.4668001505,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Transporte y Almacenamiento",
+      "[Nominal]": 1079705.8471135048,
+      "[Real]": 1177467.1655254574,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Alojamiento y Servicios de Comidas",
+      "[Nominal]": 648357.2856152732,
+      "[Real]": 707062.4072122304,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Información y Comunicación",
+      "[Nominal]": 1533777.4461795827,
+      "[Real]": 1672652.4052157828,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Actividades Financieras y de Seguros",
+      "[Nominal]": 1801230.183201702,
+      "[Real]": 1964321.4899163628,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Actividades Inmobiliarias",
+      "[Nominal]": 1442636.4435775268,
+      "[Real]": 1573259.095191678,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Actividades Profesionales",
+      "[Nominal]": 1087582.7023931958,
+      "[Real]": 1186057.2259425859,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Actividades Administrativas",
+      "[Nominal]": 947205.1129159814,
+      "[Real]": 1032969.2318125925,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Administración Pública",
+      "[Nominal]": 1175938.6131649641,
+      "[Real]": 1282413.2696668888,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Enseñanza",
+      "[Nominal]": 856782.421843971,
+      "[Real]": 934359.2724052396,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Salud Humana y Servicios Sociales",
+      "[Nominal]": 947572.134167731,
+      "[Real]": 1033369.4847834739,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Artes, Entretenimiento y Recreación",
+      "[Nominal]": 665985.549217493,
+      "[Real]": 726286.811370393,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Otras Actividades de Servicios",
+      "[Nominal]": 801683.3443614135,
+      "[Real]": 874271.2819957237,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Hogares como empleadores",
+      "[Nominal]": 325316.9586877902,
+      "[Real]": 354772.5876149731,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Actividad no especificada",
+      "[Nominal]": 944024.9349433422,
+      "[Real]": 1029501.1065326185,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Agricultura, Ganadería, Caza, Silvicultura y Pesca",
+      "[Nominal]": 1282977.265459197,
+      "[Real]": 1313895.9168463892,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Explotación de Minas y Canteras",
+      "[Nominal]": 3067318.6292118686,
+      "[Real]": 3141238.376617601,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Industria Manufacturera",
+      "[Nominal]": 1303247.3619263207,
+      "[Real]": 1334654.5052479566,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Suministro de Electricidad, Gas, Vapor y Aire Acondicionado",
+      "[Nominal]": 1640971.384762023,
+      "[Real]": 1680517.387288931,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Suministro de Agua; Alcantarillado, Gestión de Desechos",
+      "[Nominal]": 1254924.0884547716,
+      "[Real]": 1285166.6823439435,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Construcción",
+      "[Nominal]": 899496.6686231493,
+      "[Real]": 921173.7666278015,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Comercio",
+      "[Nominal]": 954095.0736152225,
+      "[Real]": 977087.946338332,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Transporte y Almacenamiento",
+      "[Nominal]": 1190339.5885853583,
+      "[Real]": 1219025.751436944,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Alojamiento y Servicios de Comidas",
+      "[Nominal]": 769672.8186962991,
+      "[Real]": 788221.2732980655,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Información y Comunicación",
+      "[Nominal]": 1934979.8785905228,
+      "[Real]": 1981611.2335786866,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Actividades Financieras y de Seguros",
+      "[Nominal]": 1725070.0034233648,
+      "[Real]": 1766642.7105089102,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Actividades Inmobiliarias",
+      "[Nominal]": 1054056.8755846585,
+      "[Real]": 1079458.7419745594,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Actividades Profesionales",
+      "[Nominal]": 1425660.630511854,
+      "[Real]": 1460017.828583843,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Actividades Administrativas",
+      "[Nominal]": 1046951.327423341,
+      "[Real]": 1072181.9561986485,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Administración Pública",
+      "[Nominal]": 1410522.5694513035,
+      "[Real]": 1444514.953239197,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Enseñanza",
+      "[Nominal]": 946329.8100191089,
+      "[Real]": 969135.5465516391,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Salud Humana y Servicios Sociales",
+      "[Nominal]": 1125741.608983033,
+      "[Real]": 1152871.0159470337,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Artes, Entretenimiento y Recreación",
+      "[Nominal]": 745369.9867373275,
+      "[Real]": 763332.7639391192,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Otras Actividades de Servicios",
+      "[Nominal]": 796874.4446384026,
+      "[Real]": 816078.4350881621,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Hogares como empleadores",
+      "[Nominal]": 345732.84143820166,
+      "[Real]": 354064.7063007525,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Organismos Extraterritoriales",
+      "[Nominal]": 1017097.5761342449,
+      "[Real]": 1041608.7551160465,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": "Actividad no especificada",
+      "[Nominal]": 2133933.0463525252,
+      "[Real]": 2185359.00199498,
+      "[Deflactor]": 0.976467959911617
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 1T",
+      "CAES[Seccion_desc]": null,
+      "[Nominal]": null,
+      "[Real]": null,
+      "[Deflactor]": 0.4274651449444429
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 2T",
+      "CAES[Seccion_desc]": null,
+      "[Nominal]": null,
+      "[Real]": null,
+      "[Deflactor]": 0.584642767275518
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": "Organismos Extraterritoriales",
+      "[Nominal]": null,
+      "[Real]": null,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 3T",
+      "CAES[Seccion_desc]": null,
+      "[Nominal]": null,
+      "[Real]": null,
+      "[Deflactor]": 0.6720923202662447
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2024 - 4T",
+      "CAES[Seccion_desc]": null,
+      "[Nominal]": null,
+      "[Real]": null,
+      "[Deflactor]": 0.742703309752882
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": "Organismos Extraterritoriales",
+      "[Nominal]": null,
+      "[Real]": null,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 1T",
+      "CAES[Seccion_desc]": null,
+      "[Nominal]": null,
+      "[Real]": null,
+      "[Deflactor]": 0.7997245115996745
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 2T",
+      "CAES[Seccion_desc]": null,
+      "[Nominal]": null,
+      "[Real]": null,
+      "[Deflactor]": 0.8688980538163733
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": "Organismos Extraterritoriales",
+      "[Nominal]": null,
+      "[Real]": null,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 3T",
+      "CAES[Seccion_desc]": null,
+      "[Nominal]": null,
+      "[Real]": null,
+      "[Deflactor]": 0.9169732105707377
+    },
+    {
+      ".Calendar[Año-Trimestre]": "2025 - 4T",
+      "CAES[Seccion_desc]": null,
+      "[Nominal]": null,
+      "[Real]": null,
+      "[Deflactor]": 0.976467959911617
+    }
+  ],
+  "caes": [
+    {
+      "[Codigo]": 101,
+      "[Sector]": "Agricultura, Ganadería, Caza, Silvicultura y Pesca"
+    },
+    {
+      "[Codigo]": 102,
+      "[Sector]": "Agricultura, Ganadería, Caza, Silvicultura y Pesca"
+    },
+    {
+      "[Codigo]": 103,
+      "[Sector]": "Agricultura, Ganadería, Caza, Silvicultura y Pesca"
+    },
+    {
+      "[Codigo]": 104,
+      "[Sector]": "Agricultura, Ganadería, Caza, Silvicultura y Pesca"
+    },
+    {
+      "[Codigo]": 105,
+      "[Sector]": "Agricultura, Ganadería, Caza, Silvicultura y Pesca"
+    },
+    {
+      "[Codigo]": 200,
+      "[Sector]": "Agricultura, Ganadería, Caza, Silvicultura y Pesca"
+    },
+    {
+      "[Codigo]": 300,
+      "[Sector]": "Agricultura, Ganadería, Caza, Silvicultura y Pesca"
+    },
+    {
+      "[Codigo]": 500,
+      "[Sector]": "Explotación de Minas y Canteras"
+    },
+    {
+      "[Codigo]": 600,
+      "[Sector]": "Explotación de Minas y Canteras"
+    },
+    {
+      "[Codigo]": 700,
+      "[Sector]": "Explotación de Minas y Canteras"
+    },
+    {
+      "[Codigo]": 800,
+      "[Sector]": "Explotación de Minas y Canteras"
+    },
+    {
+      "[Codigo]": 900,
+      "[Sector]": "Explotación de Minas y Canteras"
+    },
+    {
+      "[Codigo]": 1001,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 1002,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 1003,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 1009,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 1100,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 1200,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 1300,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 1400,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 1501,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 1502,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 1600,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 1700,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 1800,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 1901,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 1902,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 2001,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 2002,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 2009,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 2100,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 2201,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 2202,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 2301,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 2309,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 2400,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 2500,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 2601,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 2602,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 2603,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 2604,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 2701,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 2709,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 2800,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 2900,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 3001,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 3002,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 3003,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 3009,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 3100,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 3200,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 3300,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 3501,
+      "[Sector]": "Suministro de Electricidad, Gas, Vapor y Aire Acondicionado"
+    },
+    {
+      "[Codigo]": 3502,
+      "[Sector]": "Suministro de Electricidad, Gas, Vapor y Aire Acondicionado"
+    },
+    {
+      "[Codigo]": 3600,
+      "[Sector]": "Suministro de Agua; Alcantarillado, Gestión de Desechos"
+    },
+    {
+      "[Codigo]": 3700,
+      "[Sector]": "Suministro de Agua; Alcantarillado, Gestión de Desechos"
+    },
+    {
+      "[Codigo]": 3800,
+      "[Sector]": "Suministro de Agua; Alcantarillado, Gestión de Desechos"
+    },
+    {
+      "[Codigo]": 3900,
+      "[Sector]": "Suministro de Agua; Alcantarillado, Gestión de Desechos"
+    },
+    {
+      "[Codigo]": 4000,
+      "[Sector]": "Construcción"
+    },
+    {
+      "[Codigo]": 4501,
+      "[Sector]": "Comercio"
+    },
+    {
+      "[Codigo]": 4502,
+      "[Sector]": "Comercio"
+    },
+    {
+      "[Codigo]": 4503,
+      "[Sector]": "Comercio"
+    },
+    {
+      "[Codigo]": 4504,
+      "[Sector]": "Comercio"
+    },
+    {
+      "[Codigo]": 4801,
+      "[Sector]": "Comercio"
+    },
+    {
+      "[Codigo]": 4802,
+      "[Sector]": "Comercio"
+    },
+    {
+      "[Codigo]": 4803,
+      "[Sector]": "Comercio"
+    },
+    {
+      "[Codigo]": 4804,
+      "[Sector]": "Comercio"
+    },
+    {
+      "[Codigo]": 4805,
+      "[Sector]": "Comercio"
+    },
+    {
+      "[Codigo]": 4806,
+      "[Sector]": "Comercio"
+    },
+    {
+      "[Codigo]": 4807,
+      "[Sector]": "Comercio"
+    },
+    {
+      "[Codigo]": 4808,
+      "[Sector]": "Comercio"
+    },
+    {
+      "[Codigo]": 4809,
+      "[Sector]": "Comercio"
+    },
+    {
+      "[Codigo]": 4810,
+      "[Sector]": "Comercio"
+    },
+    {
+      "[Codigo]": 4811,
+      "[Sector]": "Comercio"
+    },
+    {
+      "[Codigo]": 4901,
+      "[Sector]": "Transporte y Almacenamiento"
+    },
+    {
+      "[Codigo]": 4902,
+      "[Sector]": "Transporte y Almacenamiento"
+    },
+    {
+      "[Codigo]": 4903,
+      "[Sector]": "Transporte y Almacenamiento"
+    },
+    {
+      "[Codigo]": 4904,
+      "[Sector]": "Transporte y Almacenamiento"
+    },
+    {
+      "[Codigo]": 4905,
+      "[Sector]": "Transporte y Almacenamiento"
+    },
+    {
+      "[Codigo]": 4909,
+      "[Sector]": "Transporte y Almacenamiento"
+    },
+    {
+      "[Codigo]": 5000,
+      "[Sector]": "Transporte y Almacenamiento"
+    },
+    {
+      "[Codigo]": 5100,
+      "[Sector]": "Transporte y Almacenamiento"
+    },
+    {
+      "[Codigo]": 5201,
+      "[Sector]": "Transporte y Almacenamiento"
+    },
+    {
+      "[Codigo]": 5202,
+      "[Sector]": "Transporte y Almacenamiento"
+    },
+    {
+      "[Codigo]": 5300,
+      "[Sector]": "Transporte y Almacenamiento"
+    },
+    {
+      "[Codigo]": 5500,
+      "[Sector]": "Alojamiento y Servicios de Comidas"
+    },
+    {
+      "[Codigo]": 5601,
+      "[Sector]": "Alojamiento y Servicios de Comidas"
+    },
+    {
+      "[Codigo]": 5602,
+      "[Sector]": "Alojamiento y Servicios de Comidas"
+    },
+    {
+      "[Codigo]": 5800,
+      "[Sector]": "Información y Comunicación"
+    },
+    {
+      "[Codigo]": 5900,
+      "[Sector]": "Información y Comunicación"
+    },
+    {
+      "[Codigo]": 6000,
+      "[Sector]": "Información y Comunicación"
+    },
+    {
+      "[Codigo]": 6100,
+      "[Sector]": "Información y Comunicación"
+    },
+    {
+      "[Codigo]": 6200,
+      "[Sector]": "Información y Comunicación"
+    },
+    {
+      "[Codigo]": 6300,
+      "[Sector]": "Información y Comunicación"
+    },
+    {
+      "[Codigo]": 6400,
+      "[Sector]": "Actividades Financieras y de Seguros"
+    },
+    {
+      "[Codigo]": 6500,
+      "[Sector]": "Actividades Financieras y de Seguros"
+    },
+    {
+      "[Codigo]": 6600,
+      "[Sector]": "Actividades Financieras y de Seguros"
+    },
+    {
+      "[Codigo]": 6800,
+      "[Sector]": "Actividades Inmobiliarias"
+    },
+    {
+      "[Codigo]": 6900,
+      "[Sector]": "Actividades Profesionales"
+    },
+    {
+      "[Codigo]": 7000,
+      "[Sector]": "Actividades Profesionales"
+    },
+    {
+      "[Codigo]": 7100,
+      "[Sector]": "Actividades Profesionales"
+    },
+    {
+      "[Codigo]": 7200,
+      "[Sector]": "Actividades Profesionales"
+    },
+    {
+      "[Codigo]": 7301,
+      "[Sector]": "Actividades Profesionales"
+    },
+    {
+      "[Codigo]": 7302,
+      "[Sector]": "Actividades Profesionales"
+    },
+    {
+      "[Codigo]": 7400,
+      "[Sector]": "Actividades Profesionales"
+    },
+    {
+      "[Codigo]": 7500,
+      "[Sector]": "Actividades Profesionales"
+    },
+    {
+      "[Codigo]": 7701,
+      "[Sector]": "Actividades Administrativas"
+    },
+    {
+      "[Codigo]": 7702,
+      "[Sector]": "Actividades Administrativas"
+    },
+    {
+      "[Codigo]": 7800,
+      "[Sector]": "Actividades Administrativas"
+    },
+    {
+      "[Codigo]": 7900,
+      "[Sector]": "Actividades Administrativas"
+    },
+    {
+      "[Codigo]": 8000,
+      "[Sector]": "Actividades Administrativas"
+    },
+    {
+      "[Codigo]": 8101,
+      "[Sector]": "Actividades Administrativas"
+    },
+    {
+      "[Codigo]": 8102,
+      "[Sector]": "Actividades Administrativas"
+    },
+    {
+      "[Codigo]": 8200,
+      "[Sector]": "Actividades Administrativas"
+    },
+    {
+      "[Codigo]": 8300,
+      "[Sector]": "Administración Pública"
+    },
+    {
+      "[Codigo]": 8401,
+      "[Sector]": "Administración Pública"
+    },
+    {
+      "[Codigo]": 8402,
+      "[Sector]": "Administración Pública"
+    },
+    {
+      "[Codigo]": 8403,
+      "[Sector]": "Administración Pública"
+    },
+    {
+      "[Codigo]": 8501,
+      "[Sector]": "Enseñanza"
+    },
+    {
+      "[Codigo]": 8509,
+      "[Sector]": "Enseñanza"
+    },
+    {
+      "[Codigo]": 8600,
+      "[Sector]": "Salud Humana y Servicios Sociales"
+    },
+    {
+      "[Codigo]": 8700,
+      "[Sector]": "Salud Humana y Servicios Sociales"
+    },
+    {
+      "[Codigo]": 8800,
+      "[Sector]": "Salud Humana y Servicios Sociales"
+    },
+    {
+      "[Codigo]": 9000,
+      "[Sector]": "Artes, Entretenimiento y Recreación"
+    },
+    {
+      "[Codigo]": 9100,
+      "[Sector]": "Artes, Entretenimiento y Recreación"
+    },
+    {
+      "[Codigo]": 9200,
+      "[Sector]": "Artes, Entretenimiento y Recreación"
+    },
+    {
+      "[Codigo]": 9301,
+      "[Sector]": "Artes, Entretenimiento y Recreación"
+    },
+    {
+      "[Codigo]": 9302,
+      "[Sector]": "Artes, Entretenimiento y Recreación"
+    },
+    {
+      "[Codigo]": 9401,
+      "[Sector]": "Otras Actividades de Servicios"
+    },
+    {
+      "[Codigo]": 9402,
+      "[Sector]": "Otras Actividades de Servicios"
+    },
+    {
+      "[Codigo]": 9409,
+      "[Sector]": "Otras Actividades de Servicios"
+    },
+    {
+      "[Codigo]": 9501,
+      "[Sector]": "Otras Actividades de Servicios"
+    },
+    {
+      "[Codigo]": 9502,
+      "[Sector]": "Otras Actividades de Servicios"
+    },
+    {
+      "[Codigo]": 9503,
+      "[Sector]": "Otras Actividades de Servicios"
+    },
+    {
+      "[Codigo]": 9601,
+      "[Sector]": "Otras Actividades de Servicios"
+    },
+    {
+      "[Codigo]": 9602,
+      "[Sector]": "Otras Actividades de Servicios"
+    },
+    {
+      "[Codigo]": 9603,
+      "[Sector]": "Otras Actividades de Servicios"
+    },
+    {
+      "[Codigo]": 9609,
+      "[Sector]": "Otras Actividades de Servicios"
+    },
+    {
+      "[Codigo]": 9700,
+      "[Sector]": "Hogares como empleadores"
+    },
+    {
+      "[Codigo]": 9800,
+      "[Sector]": "Hogares como empleadores"
+    },
+    {
+      "[Codigo]": 9900,
+      "[Sector]": "Organismos Extraterritoriales"
+    },
+    {
+      "[Codigo]": 35,
+      "[Sector]": "Suministro de Electricidad, Gas, Vapor y Aire Acondicionado"
+    },
+    {
+      "[Codigo]": 45,
+      "[Sector]": "Comercio"
+    },
+    {
+      "[Codigo]": 48,
+      "[Sector]": "Comercio"
+    },
+    {
+      "[Codigo]": 49,
+      "[Sector]": "Transporte y Almacenamiento"
+    },
+    {
+      "[Codigo]": 56,
+      "[Sector]": "Alojamiento y Servicios de Comidas"
+    },
+    {
+      "[Codigo]": 70,
+      "[Sector]": "Actividades Profesionales"
+    },
+    {
+      "[Codigo]": 73,
+      "[Sector]": "Actividades Profesionales"
+    },
+    {
+      "[Codigo]": 81,
+      "[Sector]": "Actividades Administrativas"
+    },
+    {
+      "[Codigo]": 84,
+      "[Sector]": "Administración Pública"
+    },
+    {
+      "[Codigo]": 95,
+      "[Sector]": "Otras Actividades de Servicios"
+    },
+    {
+      "[Codigo]": 9999,
+      "[Sector]": "Actividad no especificada"
+    },
+    {
+      "[Codigo]": 19,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 20,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 26,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 1,
+      "[Sector]": "Agricultura, Ganadería, Caza, Silvicultura y Pesca"
+    },
+    {
+      "[Codigo]": 10,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 22,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 24,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 27,
+      "[Sector]": "Industria Manufacturera"
+    },
+    {
+      "[Codigo]": 52,
+      "[Sector]": "Transporte y Almacenamiento"
+    },
+    {
+      "[Codigo]": 86,
+      "[Sector]": "Salud Humana y Servicios Sociales"
+    },
+    {
+      "[Codigo]": 88,
+      "[Sector]": "Salud Humana y Servicios Sociales"
+    }
+  ],
+  "claves": [
+    {
+      "[Filas]": 163,
+      "[Claves]": 163
+    }
+  ],
+  "sin_sector": []
+}

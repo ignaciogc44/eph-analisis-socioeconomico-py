@@ -1,0 +1,30 @@
+.venv/
+__pycache__/
+.streamlit/secrets.toml
+data/personas/
+data/hogares/
+data/api/
+*.log
+
+# Credenciales, entornos y archivos privados
+.env
+.env.*
+!.env.example
+**/secrets.toml
+*.pem
+*.key
+*.pfx
+*.p12
+.ipynb_checkpoints/
+*.ipynb
+*.pbix
+*.pbip
+*.tmdl
+data/downloads/
+.DS_Store
+Thumbs.db
+
+# Borradores y salidas intermedias de publicación
+tmp/
+PUBLICACION.md
+data/benchmarks/ipc_inicial.json
