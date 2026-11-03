@@ -1,37 +1,21 @@
-.venv/
-__pycache__/
-.streamlit/secrets.toml
-data/personas/
-data/hogares/
-data/api/
-*.log
+# Distribución mínima: solo se publican los archivos de esta lista.
+/*
+!/.gitignore
+!/README.md
+!/requirements.txt
+!/app.py
+!/charts.py
+!/metrics.py
+!/formatting.py
+!/ui.py
+!/editorial.css
+!/graficos_vscode.py
+!/sync_sources.py
 
-# Credenciales, entornos y archivos privados
-.env
-.env.*
-!.env.example
-**/secrets.toml
-*.pem
-*.key
-*.pfx
-*.p12
-.ipynb_checkpoints/
-*.ipynb
-*.pbix
-*.pbip
-*.tmdl
-data/downloads/
-.DS_Store
-Thumbs.db
+!/.streamlit/
+/.streamlit/*
+!/.streamlit/config.toml
 
-# Borradores y salidas intermedias de publicación
-tmp/
-PUBLICACION.md
-data/benchmarks/ipc_inicial.json
-
-# Herramientas y referencias locales que no forman parte de la distribución
-.vscode/
-preparar_datos.py
-data/ipc_oficial.xls
-auditoria_dependencias.json
-data/benchmarks/revision_pagina7_corregida.json
+!/data/
+/data/*
+!/data/reference.json
