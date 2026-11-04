@@ -59,7 +59,19 @@ def figure(rows,kind,**kwargs):
     if kind=='line':
         rate_colors={'Actividad':'#101010','Empleo':'#9c9c97','Desocupación':'#F34B18','Sin descuento jubilatorio':'#a57020'}
         for trace in f.data:
-            if trace.name in rate_colors: trace.line.color=rate_colors[trace.name];trace.marker.color=rate_colors[trace.name]
+            if trace.name in rate_colors:
+                color=rate_colors[trace.name]
+                trace.line.color=color;trace.marker.color=color
+                trace.mode='lines+markers+text'
+                trace.text=[spanish(value,1)+'%' if pd.notna(value) else '' for value in trace.y]
+                trace.texttemplate='%{text}'
+                trace.textposition='bottom center' if trace.name=='Empleo' else 'top center'
+                trace.textfont=dict(size=10.5,color='#62625f' if trace.name=='Empleo' else color)
+                trace.cliponaxis=False
+        if 'Indicador' in rows:
+            periods=list(dict.fromkeys(rows.Periodo))
+            f.update_xaxes(tickmode='array',tickvals=periods,ticktext=[x[-2:]+' '+x[2:4] for x in periods],tickangle=0)
+            f.update_layout(margin=dict(r=20,t=28))
     if kind=='bar' and 'Sexo' in rows and 'Ingreso' in rows:
         f.update_layout(height=max(280,40*len(rows['Nivel educativo'].unique())+86),legend=dict(entrywidth=0,entrywidthmode='pixels',xref='paper',x=0,xanchor='left'))
         f.update_traces(text=None,texttemplate=None,textposition='none')

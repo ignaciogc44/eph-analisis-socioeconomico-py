@@ -1,4 +1,4 @@
-# EPH · Panorama socioeconómico
+# EPH · Análisis socioeconómico
 
 Tablero de vivienda, educación, mercado de trabajo e ingresos con microdatos de la **Encuesta Permanente de Hogares del INDEC**. Incluye filtros territoriales y por sexo, tablas descargables y diseño adaptable a móvil.
 

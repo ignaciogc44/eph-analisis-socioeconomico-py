@@ -81,3 +81,13 @@ button:focus-visible{outline:2px solid var(--accent)!important;outline-offset:3p
 
 [data-testid="stMultiSelect"] [data-tag]{background:var(--accent-soft)!important;color:#9d391d!important;border-radius:5px;font-size:12px}
 [data-testid="stMultiSelect"] [data-tag] button{color:#9d391d!important}
+
+/* En móvil se espacian las etiquetas, conservando el primer y último dato. */
+@media(max-width:760px){
+ .st-key-panel_labor_history .textpoint:nth-child(even),
+ .st-key-panel_labor_history .textpoint:nth-last-child(2),
+ .st-key-panel_labor_history .xtick:nth-child(even),
+ .st-key-panel_labor_history .xtick:nth-last-child(2){display:none}
+ .st-key-panel_labor_history .textpoint:last-child,
+ .st-key-panel_labor_history .xtick:last-child{display:inline}
+}
