@@ -9,7 +9,7 @@ import metrics as m
 from formatting import display_table, export_table
 from ui import icon, metric_cards, CHART_ICONS
 
-st.set_page_config(page_title='EPH | Análisis socioeconómico',page_icon='📊',layout='wide')
+st.set_page_config(page_title='EPH | Análisis socioeconómico | PY',page_icon='📊',layout='wide')
 st.markdown('<style>'+Path(__file__).with_name('editorial.css').read_text(encoding='utf-8')+'</style>',unsafe_allow_html=True)
 PAGES=['Vivienda y servicios','Educación','Mercado de trabajo','Composición del mercado laboral','Empleo por sector de actividad','Ingresos y distribución','Evolución del ingreso laboral']
 @st.cache_data(show_spinner='Cargando bases oficiales de la EPH…')
@@ -26,7 +26,7 @@ VIEWS = {
 }
 st.markdown(
     '<div class="eph-masthead"><span class="eph-brand">'+icon('chart')+' EPH</span><span>MICRODATOS DEL INDEC · ARGENTINA</span></div>'
-    '<div class="eph-hero"><div class="eph-hero-copy"><h1 class="eph-title">Análisis socioeconómico de la EPH</h1>'
+    '<div class="eph-hero"><div class="eph-hero-copy"><h1 class="eph-title">Análisis socioeconómico de la EPH · PY</h1>'
     '<div class="eph-deck">Vivienda, educación, mercado de trabajo e ingresos de la población urbana.</div>'
     '<div class="eph-tags"><span class="eph-tag">'+icon('pin')+'31 aglomerados urbanos</span>'
     '<span class="eph-tag">'+icon('calendar')+str(int(p.ANO4.min()))+'–'+str(int(p.ANO4.max()))+'</span></div></div>'
