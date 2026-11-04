@@ -37,4 +37,4 @@ def metric_cards(values):
     for label,value in values:
         title,glyph,context=METRICS.get(label,(label,'chart',''))
         cards.append('<div class="eph-metric"><div class="eph-metric-top"><span class="eph-metric-icon">'+icon(glyph)+'</span><span class="eph-metric-label">'+html.escape(title)+'</span></div><div class="eph-metric-value">'+html.escape(str(value))+'</div><div class="eph-metric-context">'+html.escape(context)+'</div></div>')
-    return '<div class="eph-metrics">'+''.join(cards)+'</div>'
+    return '<div class="eph-metrics eph-metrics-'+str(len(cards))+'">'+''.join(cards)+'</div>'

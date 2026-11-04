@@ -4,6 +4,9 @@ backgroundColor = "#ffffff"
 secondaryBackgroundColor = "#f7f7f5"
 textColor = "#101010"
 font = "sans serif"
+dataframeHeaderBackgroundColor = "#edf0f3"
+dataframeHeaderTextColor = "#36424f"
+dataframeBorderColor = "#e6e9ed"
 [browser]
 gatherUsageStats = false
 [server]

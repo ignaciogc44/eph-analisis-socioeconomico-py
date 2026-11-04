@@ -21,14 +21,14 @@ class Chart:
 def figure(rows,kind,**kwargs):
     kwargs.setdefault('color_discrete_sequence',PALETTE)
     f=getattr(px,kind)(rows,template='plotly_white',**kwargs)
-    f.update_layout(font=dict(family='Arial, Helvetica, sans-serif',size=13,color='#101010'),paper_bgcolor='white',plot_bgcolor='white',legend_title_text='',hoverlabel=dict(bgcolor='white'),height=330,autosize=True,legend=dict(orientation='h',yanchor='top',y=-.18,x=0,entrywidth=0,entrywidthmode='pixels'),margin=dict(l=8,r=40,t=20,b=70),dragmode=False,bargap=.35)
+    f.update_layout(font=dict(family='Arial, Helvetica, sans-serif',size=13,color='#101010'),paper_bgcolor='white',plot_bgcolor='white',legend_title_text='',hoverlabel=dict(bgcolor='white'),height=285,autosize=True,legend=dict(orientation='h',yanchor='top',y=-.32,x=0,entrywidth=0,entrywidthmode='pixels'),margin=dict(l=8,r=40,t=20,b=85),dragmode=False,bargap=.35)
     f.update_traces(cliponaxis=False,selector=dict(type='bar'))
     format_chart(f,rows)
     if kind=='bar' and kwargs.get('orientation')=='h':
         label=kwargs['y'];labels=list(dict.fromkeys(rows[label].dropna()))
         short_names={'Superior/universitario incompleto': 'Superior/univ. incompleto', 'Superior/universitario completo': 'Superior/univ. completo', 'Agricultura, Ganadería, Caza, Silvicultura y Pesca': 'Agro y pesca', 'Suministro de Electricidad, Gas, Vapor y Aire Acondicionado': 'Electricidad y gas', 'Suministro de Agua; Alcantarillado, Gestión de Desechos': 'Agua y saneamiento', 'Hogares como empleadores': 'Servicio doméstico', 'Trabajador familiar sin remuneración': 'Familiar sin remuneración'}
         ticks=['<br>'.join(textwrap.wrap(short_names.get(str(x),str(x)),22)) for x in labels]
-        f.update_layout(yaxis=dict(autorange='reversed',title=None,tickmode='array',tickvals=labels,ticktext=ticks,tickfont=dict(size=11)),xaxis_title=None,height=max(260,34*len(labels)+86))
+        f.update_layout(yaxis=dict(autorange='reversed',title=None,tickmode='array',tickvals=labels,ticktext=ticks,tickfont=dict(size=11)),xaxis_title=None,height=max(230,28*len(labels)+70))
     f.update_xaxes(showline=True,linecolor='#bebeba',ticks='',tickfont=dict(color='#777777',size=11),showgrid=False,nticks=5)
     f.update_yaxes(showline=False,ticks='',tickfont=dict(color='#777777',size=11),gridcolor='#e8e8e5',gridwidth=.7,zeroline=False,nticks=5)
     if kind=='line':
@@ -73,7 +73,7 @@ def figure(rows,kind,**kwargs):
             f.update_xaxes(tickmode='array',tickvals=periods,ticktext=[x[-2:]+' '+x[2:4] for x in periods],tickangle=0)
             f.update_layout(margin=dict(r=20,t=28))
     if kind=='bar' and 'Sexo' in rows and 'Ingreso' in rows:
-        f.update_layout(height=max(280,40*len(rows['Nivel educativo'].unique())+86),legend=dict(entrywidth=0,entrywidthmode='pixels',xref='paper',x=0,xanchor='left'))
+        f.update_layout(height=max(260,38*len(rows['Nivel educativo'].unique())+74),legend=dict(entrywidth=0,entrywidthmode='pixels',xref='paper',x=0,xanchor='left'))
         f.update_traces(text=None,texttemplate=None,textposition='none')
     if kind=='line' and 'Sector' in rows:
         names={'Administración Pública':'Adm. pública','Industria Manufacturera':'Industria manufacturera'}

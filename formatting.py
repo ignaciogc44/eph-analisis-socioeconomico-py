@@ -53,7 +53,16 @@ def display_table(df):
         elif unit=='money': formats[c]=lambda x: '$ '+spanish(x) if pd.notna(x) else 'Sin datos'
         elif c in COUNT_COLUMNS or c=='Decil': formats[c]=spanish
     styled=df.style.format(formats,na_rep='Sin datos')
-    if 'Total' in df: styled=styled.set_properties(subset=['Total'],**{'background-color':'#f5f5f2'})
+    def row_styles(data):
+        styles=pd.DataFrame('',index=data.index,columns=data.columns)
+        for pos,index in enumerate(data.index):
+            styles.loc[index,:]='background-color: '+('#f7f8fa' if pos%2 else '#ffffff')+'; color: #303b44;'
+            if str(data.iloc[pos,0])=='Total':
+                styles.loc[index,:]='background-color: #edf0f3; color: #18212b; font-weight: 600;'
+        if 'Total' in data:
+            styles['Total']='background-color: #fff2eb; color: #8e3418; font-weight: 600;'
+        return styles
+    styled=styled.apply(row_styles,axis=None)
     return styled
 
 

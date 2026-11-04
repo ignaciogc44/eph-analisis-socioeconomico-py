@@ -25,12 +25,11 @@ VIEWS = {
  'Ingresos': {'Distribución y brechas':PAGES[5], 'Evolución por sector':PAGES[6]},
 }
 st.markdown(
-    '<div class="eph-masthead"><span class="eph-brand">'+icon('chart')+' EPH</span><span>MICRODATOS DEL INDEC · ARGENTINA</span></div>'
-    '<div class="eph-hero"><div class="eph-hero-copy"><h1 class="eph-title">Análisis socioeconómico de la EPH · PY</h1>'
-    '<div class="eph-deck">Vivienda, educación, mercado de trabajo e ingresos de la población urbana.</div>'
-    '<div class="eph-tags"><span class="eph-tag">'+icon('pin')+'31 aglomerados urbanos</span>'
-    '<span class="eph-tag">'+icon('calendar')+str(int(p.ANO4.min()))+'–'+str(int(p.ANO4.max()))+'</span></div></div>'
-    '<div class="eph-hero-symbol">'+icon('people')+'</div></div>',unsafe_allow_html=True)
+    '<div class="eph-appbar"><div class="eph-appbar-brand"><span class="eph-appmark">'+icon('chart')+'</span>'
+    '<div><h1>Análisis socioeconómico de la EPH <span class="eph-py">PY</span></h1>'
+    '<div class="eph-appbar-subtitle">Vivienda, educación, trabajo e ingresos</div></div></div>'
+    '<div class="eph-appbar-meta"><span>'+icon('pin')+'31 aglomerados urbanos</span><span>'+icon('calendar')+str(int(p.ANO4.min()))+'–'+str(int(p.ANO4.max()))+'</span></div></div>',
+    unsafe_allow_html=True)
 
 def reset_filters():
     for k in ['regions','cities','sexes']: st.session_state[k]=[]
@@ -44,34 +43,38 @@ unit='Personas';territory='Región';sectors=None
 if st.session_state.get('section') not in SECTIONS:
     st.session_state['section']='Condiciones de vida' if st.session_state.get('section')=='Vida cotidiana' else 'Panorama'
 with st.container(key='explorer'):
-    section=st.segmented_control('Área',SECTIONS,format_func=lambda x: ':material/'+{'Panorama':'space_dashboard','Condiciones de vida':'home','Trabajo':'work_outline','Ingresos':'payments'}[x]+': '+x,required=True,key='section',label_visibility='collapsed',width='stretch') or 'Panorama'
+    with st.container(key='app_toolbar'):
+        nav,period_control,filter_control=st.columns([4.6,1.15,.8],vertical_alignment='center',gap='small')
+        with nav:
+            section=st.segmented_control('Área',SECTIONS,format_func=lambda x: ':material/'+{'Panorama':'space_dashboard','Condiciones de vida':'home','Trabajo':'work_outline','Ingresos':'payments'}[x]+': '+x,required=True,key='section',label_visibility='collapsed',width='stretch',wrap=True) or 'Panorama'
+        with period_control:
+            period=st.selectbox('Período',periods,index=len(periods)-1,key='period',label_visibility='collapsed')
+        count=sum(len(st.session_state.get(k,[])) for k in ['regions','cities','sexes'])
+        with filter_control:
+            with st.popover('Filtros'+(f' · {count}' if count else ''),icon=':material/tune:',width='stretch'):
+                regions=st.multiselect('Región',sorted(p['Región'].unique()),key='regions',on_change=prune_cities)
+                available=m.select(p,regions=regions)
+                cities=st.multiselect('Aglomerado',sorted(available.Aglomerado.unique()),key='cities')
+                sexes=st.multiselect('Sexo · indicadores de personas',['Mujer','Varón'],key='sexes')
+                st.caption('Sin selección se incluyen todas las categorías. El sexo solo filtra indicadores de personas.')
+                st.button('Limpiar filtros',icon=':material/restart_alt:',on_click=reset_filters,width='stretch')
     page=None
     if section!='Panorama':
-        labels=list(VIEWS[section])
-        view=st.segmented_control('Vista',labels,default=labels[0],required=True,key='view_'+section,label_visibility='collapsed',width='content')
-        page=VIEWS[section][view]
-    widths=[1.2,1,1,.8] if page==PAGES[0] else [1,4]
-    controls=st.columns(widths,vertical_alignment='bottom')
-    with controls[0]:
-        period=st.selectbox('Período',periods,index=len(periods)-1,key='period')
-    if page==PAGES[0]:
-        with controls[1]: unit=st.selectbox('Unidad estadística',['Personas','Hogares'],key='housing_unit')
-        with controls[2]: territory=st.selectbox('Desagregación',['Región','Aglomerado'],key='housing_territory')
-    count=sum(len(st.session_state.get(k,[])) for k in ['regions','cities','sexes'])
-    with controls[-1]:
-        with st.popover('Filtros'+(f' · {count}' if count else ''),icon=':material/tune:',width='content'):
-            regions=st.multiselect('Región',sorted(p['Región'].unique()),key='regions',on_change=prune_cities)
-            available=m.select(p,regions=regions)
-            cities=st.multiselect('Aglomerado',sorted(available.Aglomerado.unique()),key='cities')
-            sexes=st.multiselect('Sexo · indicadores de personas',['Mujer','Varón'],key='sexes')
-            st.caption('Sin selección se incluyen todas las categorías. El sexo solo filtra indicadores de personas.')
-            st.button('Limpiar filtros',icon=':material/restart_alt:',on_click=reset_filters,width='stretch')
+        with st.container(key='view_controls'):
+            secondary=st.columns([2.5,1,1] if section=='Condiciones de vida' else [1],vertical_alignment='center',gap='small')
+            with secondary[0]:
+                labels=list(VIEWS[section])
+                view=st.segmented_control('Vista',labels,default=labels[0],required=True,key='view_'+section,label_visibility='collapsed',width='content',wrap=True)
+                page=VIEWS[section][view]
+            if page==PAGES[0]:
+                with secondary[1]:unit=st.selectbox('Unidad estadística',['Personas','Hogares'],key='housing_unit',label_visibility='collapsed')
+                with secondary[2]:territory=st.selectbox('Desagregación',['Región','Aglomerado'],key='housing_territory',label_visibility='collapsed')
     if page==PAGES[6]:
         salary_history=m.select(p,None,regions,cities,sexes)
         options=sorted(m.eligible_salary(salary_history).Sector.unique())
         sectors=st.multiselect('Sectores a comparar',options,default=[s for s in charts.DEFAULT_SECTORS if s in options],key='income_sectors')
     scope=' / '.join(regions+cities) if regions or cities else '31 aglomerados urbanos'
-    st.markdown('<div class="eph-scope">'+icon('pin')+html.escape(f'{period} · {scope}'+(' · '+', '.join(sexes) if sexes else '')+' · INDEC, EPH')+'</div>',unsafe_allow_html=True)
+    st.markdown('<div class="eph-scope">'+icon('pin')+html.escape(scope+(' · '+', '.join(sexes) if sexes else '')+' · INDEC, EPH')+'</div>',unsafe_allow_html=True)
 
 pt=m.select(p,period,regions,cities,sexes)
 pt_total=m.select(p,period,regions,cities)
@@ -94,30 +97,55 @@ values=charts.cards(view_name,pt,ht,ref,period)
 
 if values: metric_grid(values)
 if view_name in ['Panorama',PAGES[5]]:
-    st.caption('Ingresos en pesos de diciembre de 2025, ajustados por IPC nacional; asalariados con ingreso positivo. IPCF: media entre hogares. El filtro de sexo solo afecta a personas.')
+    income_context='Ingresos a precios de diciembre de 2025 · IPCF medio entre hogares.'
+    if sexes: income_context+=' El filtro de sexo no se aplica a hogares.'
+    st.caption(income_context)
 try:
     specs=charts.build(view_name,pt,ht,history,ref,period,unit,territory,sectors,population=pt_total)
 except ValueError as e:
     st.error(str(e));st.stop()
+def render_table(spec):
+    table=display_table(spec.rows)
+    config={}
+    if len(table.data.columns) and table.data.columns[0] not in ['Periodo','Decil']:
+        config[table.data.columns[0]]=st.column_config.Column(width='medium')
+    for col in table.data.columns:
+        if col=='Personas ponderadas':config[col]=st.column_config.Column('Personas',width='small',help='Estimación poblacional ponderada, no cantidad de encuestas.')
+        elif col=='Hogares ponderados':config[col]=st.column_config.Column('Hogares',width='small',help='Estimación de hogares ponderada, no cantidad de encuestas.')
+        elif col=='Porcentaje':config[col]=st.column_config.Column('%',width='small')
+        elif col in ['Periodo','Decil']:config[col]=st.column_config.Column(col,width='small')
+        elif col in ['Actividad','Empleo','Desocupación','Sin descuento jubilatorio']:
+            label={'Desocupación':'Desocup.','Sin descuento jubilatorio':'Sin desc.'}.get(col,col)
+            config[col]=st.column_config.Column(label,width='small',help=col)
+    with st.container(key='data_'+spec.identity):
+        with st.container(key='table_tools_'+spec.identity):
+            label,download=st.columns([4,1],vertical_alignment='center',gap='small')
+            with label:
+                table_label='Datos · Pesos de diciembre de 2025' if 'Ingreso' in spec.rows else 'Datos del gráfico'
+                st.markdown('<div class="eph-table-label">'+icon('table')+table_label+'</div>',unsafe_allow_html=True)
+            with download:
+                st.download_button('CSV',icon=':material/download:',type='tertiary',data=export_table(spec.rows).to_csv(index=False,decimal=',',sep=';').encode('utf-8-sig'),file_name=f'eph_{spec.identity}_{period}.csv',mime='text/csv',key='download_'+spec.identity,width='content')
+        st.dataframe(table,width='stretch',hide_index=True,row_height=30,column_config=config)
+
 for spec in specs:
     with st.container(key='panel_'+spec.identity):
         st.markdown('<div class="eph-chart-heading"><span class="eph-chart-icon">'+icon(CHART_ICONS.get(spec.identity,'chart'))+'</span><h3>'+html.escape(spec.title)+'</h3></div>',unsafe_allow_html=True)
         if 'Ingreso' in spec.rows:
             st.markdown('<div class="eph-unit">Pesos de diciembre de 2025 · Ajustados por IPC nacional</div>',unsafe_allow_html=True)
-        if spec.figure is not None:
+        def render_figure():
             st.plotly_chart(spec.figure,width='stretch',key=spec.identity,config={'responsive':True,'displayModeBar':False,'scrollZoom':False})
             st.caption(spec.note)
             if 'Casos muestrales' in spec.rows and spec.rows['Casos muestrales'].between(1,9).any():
                 st.warning('Hay estimaciones con una base reducida de observaciones; interpretalas con cautela.')
-            with st.container(key='data_'+spec.identity):
-                table_label='Datos del gráfico · Pesos de diciembre de 2025' if 'Ingreso' in spec.rows else 'Datos del gráfico'
-                st.markdown('<div class="eph-table-label">'+icon('table')+table_label+'</div>',unsafe_allow_html=True)
-                st.dataframe(display_table(spec.rows),width='stretch',hide_index=True,row_height=32)
-                st.download_button('Descargar CSV',icon=':material/download:',data=export_table(spec.rows).to_csv(index=False,decimal=',',sep=';').encode('utf-8-sig'),file_name=f'eph_{spec.identity}_{period}.csv',mime='text/csv',key='download_'+spec.identity)
+        if spec.figure is not None and spec.identity not in ['income_history','income_education']:
+            with st.container(key='plot_table_'+spec.identity):
+                visual,details=st.columns([1.6,1],gap='medium')
+                with visual:render_figure()
+                with details:render_table(spec)
+        elif spec.figure is not None:
+            render_figure();render_table(spec)
         else:
-            st.dataframe(display_table(spec.rows),width='stretch',hide_index=True,row_height=32)
-            st.caption(spec.note)
-            st.download_button('Descargar tabla',icon=':material/download:',data=export_table(spec.rows).to_csv(index=False,decimal=',',sep=';').encode('utf-8-sig'),file_name=f'eph_{spec.identity}_{period}.csv',key='table_'+spec.identity)
+            st.caption(spec.note);render_table(spec)
 if section=='Panorama':
     st.subheader('Seguí explorando')
     def navigate(destination): st.session_state['section']=destination
