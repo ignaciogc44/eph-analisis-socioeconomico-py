@@ -9,7 +9,7 @@ import metrics as m
 from formatting import display_table, export_table
 from ui import icon, metric_cards, CHART_ICONS
 
-st.set_page_config(page_title='EPH | Análisis socioeconómico | PY',page_icon='📊',layout='wide')
+st.set_page_config(page_title='EPH | Análisis socioeconómico',page_icon='📊',layout='wide')
 st.markdown('<style>'+Path(__file__).with_name('editorial.css').read_text(encoding='utf-8')+'</style>',unsafe_allow_html=True)
 PAGES=['Vivienda y servicios','Educación','Mercado de trabajo','Composición del mercado laboral','Empleo por sector de actividad','Ingresos y distribución','Evolución del ingreso laboral']
 @st.cache_data(show_spinner='Cargando bases oficiales de la EPH…')
@@ -24,11 +24,12 @@ VIEWS = {
  'Trabajo': {'Participación y evolución':PAGES[2], 'Composición del empleo':PAGES[3], 'Sectores de actividad':PAGES[4]},
  'Ingresos': {'Distribución y brechas':PAGES[5], 'Evolución por sector':PAGES[6]},
 }
+coverage = f'{int(p.ANO4.min())}–{int(p.ANO4.max())}'
 st.markdown(
     '<div class="eph-appbar"><div class="eph-appbar-brand"><span class="eph-appmark">'+icon('chart')+'</span>'
-    '<div><h1>Análisis socioeconómico de la EPH <span class="eph-py">PY</span></h1>'
-    '<div class="eph-appbar-subtitle">Vivienda, educación, trabajo e ingresos</div></div></div>'
-    '<div class="eph-appbar-meta"><span>'+icon('pin')+'31 aglomerados urbanos</span><span>'+icon('calendar')+str(int(p.ANO4.min()))+'–'+str(int(p.ANO4.max()))+'</span></div></div>',
+    '<div><h1>Análisis socioeconómico de la EPH</h1>'
+    f'<div class="eph-appbar-subtitle">EPH {coverage} · 31 aglomerados urbanos</div></div></div>'
+    '<div class="eph-appbar-meta"><span>'+icon('pin')+'Microdatos del INDEC</span></div></div>',
     unsafe_allow_html=True)
 
 def reset_filters():
@@ -121,7 +122,14 @@ def render_table(spec):
         with st.container(key='table_tools_'+spec.identity):
             label,download=st.columns([4,1],vertical_alignment='center',gap='small')
             with label:
-                table_label='Datos · Pesos de diciembre de 2025' if 'Ingreso' in spec.rows else 'Datos del gráfico'
+                if 'Ingreso' in spec.rows:
+                    table_label = 'Datos · Pesos de diciembre de 2025'
+                elif spec.identity in {'dwelling', 'tenure', 'housing'}:
+                    table_label = f'Datos · {unit}'
+                elif spec.identity in {'overview_services', 'education', 'secondary', 'status_sex', 'population', 'inactivity', 'occupation', 'sectors'}:
+                    table_label = 'Datos · Personas'
+                else:
+                    table_label = 'Datos del gráfico'
                 st.markdown('<div class="eph-table-label">'+icon('table')+table_label+'</div>',unsafe_allow_html=True)
             with download:
                 st.download_button('CSV',icon=':material/download:',type='tertiary',data=export_table(spec.rows).to_csv(index=False,decimal=',',sep=';').encode('utf-8-sig'),file_name=f'eph_{spec.identity}_{period}.csv',mime='text/csv',key='download_'+spec.identity,width='content')
@@ -131,7 +139,11 @@ for spec in specs:
     with st.container(key='panel_'+spec.identity):
         st.markdown('<div class="eph-chart-heading"><span class="eph-chart-icon">'+icon(CHART_ICONS.get(spec.identity,'chart'))+'</span><h3>'+html.escape(spec.title)+'</h3></div>',unsafe_allow_html=True)
         if 'Ingreso' in spec.rows:
-            st.markdown('<div class="eph-unit">Pesos de diciembre de 2025 · Ajustados por IPC nacional</div>',unsafe_allow_html=True)
+            universe = 'PEA con ingresos · ' if spec.identity == 'income_education' else ''
+            st.markdown(
+                f'<div class="eph-unit">{universe}Pesos de diciembre de 2025 · Ajustados por IPC nacional</div>',
+                unsafe_allow_html=True,
+            )
         def render_figure():
             st.plotly_chart(spec.figure,width='stretch',key=spec.identity,config={'responsive':True,'displayModeBar':False,'scrollZoom':False})
             st.caption(spec.note)

@@ -11,7 +11,6 @@ h2{font-size:1.4rem!important}h3{font-size:1.05rem!important;line-height:1.35!im
 .eph-appmark{width:36px;height:36px;display:grid;place-items:center;background:var(--accent-soft);border:1px solid #f6ddd2;border-radius:8px;color:var(--accent);flex:none}
 .eph-appbar h1{font-size:22px!important;font-weight:700;line-height:1.25;margin:0!important;padding:0!important}
 .eph-appbar-subtitle{color:var(--muted);font-size:11px;line-height:1.5;margin-top:2px}
-.eph-py{display:inline-block;vertical-align:middle;font-size:9px;font-weight:700;letter-spacing:.04em;color:#93401f;background:var(--accent-soft);border-radius:4px;padding:3px 5px;margin-left:3px}
 .eph-appbar-meta{display:flex;align-items:center;gap:14px;color:var(--muted);font-size:10px;white-space:nowrap}
 .eph-appbar-meta span{display:flex;align-items:center;gap:5px}.eph-appbar-meta .eph-icon{width:14px;height:14px}
 .st-key-explorer{background:white;border:1px solid var(--rule);border-radius:8px;padding:8px 10px;gap:6px!important;min-width:0}
@@ -68,7 +67,7 @@ button:focus-visible{outline:2px solid var(--accent)!important;outline-offset:2p
 }
 @media(max-width:760px){
  .block-container{padding:12px 12px 20px!important}.eph-appbar{padding-bottom:9px;gap:8px}.eph-appbar h1{font-size:18px!important}.eph-appmark{width:30px;height:30px}
- .eph-appbar-brand{gap:8px}.eph-appbar-subtitle{font-size:10px}.eph-py{font-size:8px}
+ .eph-appbar-brand{gap:8px}.eph-appbar-subtitle{font-size:10px}
  .st-key-explorer{padding:7px 8px;border-radius:7px}
  [data-testid="stHorizontalBlock"]{flex-direction:column!important;gap:8px!important}
  [data-testid="stColumn"]{width:100%!important;flex:1 1 100%!important;min-width:0!important}
@@ -87,7 +86,6 @@ button:focus-visible{outline:2px solid var(--accent)!important;outline-offset:2p
  .st-key-panel_labor_history .textpoint:nth-child(even),.st-key-panel_labor_history .textpoint:nth-last-child(2),.st-key-panel_labor_history .xtick:nth-child(even),.st-key-panel_labor_history .xtick:nth-last-child(2){display:none}
  .st-key-panel_labor_history .textpoint:last-child,.st-key-panel_labor_history .xtick:last-child{display:inline}
 }
-@media(max-width:420px){.eph-appbar-subtitle{display:none}}
 @media(max-width:350px){.eph-metrics{grid-template-columns:1fr}}
 
 @media(max-width:1180px){

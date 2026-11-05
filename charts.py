@@ -73,8 +73,16 @@ def figure(rows,kind,**kwargs):
             f.update_xaxes(tickmode='array',tickvals=periods,ticktext=[x[-2:]+' '+x[2:4] for x in periods],tickangle=0)
             f.update_layout(margin=dict(r=20,t=28))
     if kind=='bar' and 'Sexo' in rows and 'Ingreso' in rows:
-        f.update_layout(height=max(260,38*len(rows['Nivel educativo'].unique())+74),legend=dict(entrywidth=0,entrywidthmode='pixels',xref='paper',x=0,xanchor='left'))
-        f.update_traces(text=None,texttemplate=None,textposition='none')
+        levels = rows['Nivel educativo'].nunique()
+        f.update_layout(
+            height=max(220, 49 * levels + 72),
+            margin=dict(l=8, r=72, t=45, b=30),
+            bargap=.24,
+            bargroupgap=.14,
+            legend=dict(x=0, xanchor='left', y=1.02, yanchor='bottom', font=dict(size=11)),
+        )
+        f.update_xaxes(rangemode='tozero', nticks=4)
+        f.update_traces(textangle=0, outsidetextfont=dict(size=11, color='#303b44'))
     if kind=='line' and 'Sector' in rows:
         names={'Administración Pública':'Adm. pública','Industria Manufacturera':'Industria manufacturera'}
         for trace in f.data:
@@ -157,7 +165,7 @@ def build(view,p,h,history,ref,period,unit='Personas',territory='Región',sector
         df=pd.concat([overall,df],ignore_index=True)
         df['Nivel educativo']=df.NIVEL_ED.map(m.EDUCATION).fillna('Sin información')
         df=df.assign(orden=df.NIVEL_ED.map({v:i for i,v in enumerate(m.EDUCATION)})).sort_values('orden').drop(columns='orden')
-        bars('income_education','Ingreso total individual · PEA con ingresos · educación y sexo',df,'Nivel educativo','Total incluye ambos sexos del mismo período y territorio, aunque se filtre un sexo. PEA con P47T positivo; ponderación PONDII. Incluye fuentes laborales y no laborales; sin corte etario adicional. Pesos constantes ajustados por IPC nacional.',value='Ingreso',color='Sexo')
+        bars('income_education','Ingreso individual medio por educación y sexo',df,'Nivel educativo','Total incluye ambos sexos del mismo período y territorio, aunque se filtre un sexo. PEA con P47T positivo; ponderación PONDII. Incluye fuentes laborales y no laborales; sin corte etario adicional. Pesos constantes ajustados por IPC nacional.',value='Ingreso',color='Sexo')
     elif view=='Evolución del ingreso laboral':
         sectors=DEFAULT_SECTORS if sectors is None else sectors
         if not sectors: return []

@@ -1,8 +1,20 @@
-# EPH · Análisis socioeconómico · PY
+# EPH · Análisis socioeconómico
 
-Tablero de vivienda, educación, mercado de trabajo e ingresos con microdatos de la **Encuesta Permanente de Hogares del INDEC**. Incluye filtros territoriales y por sexo, tablas descargables y diseño adaptable a móvil.
+Tablero interactivo en Python sobre vivienda, educación, mercado de trabajo e ingresos, construido con microdatos de la Encuesta Permanente de Hogares del INDEC.
 
-**Cobertura:** 31 aglomerados urbanos, 2024-2025. Los ingresos se expresan a precios de diciembre de 2025.
+**EPH 2024–2025 · 31 aglomerados urbanos**
+
+![Vista del panorama de la EPH, con indicadores, evolución de las tasas y tablas de datos](panorama.jpg)
+
+## Qué muestra el tablero
+
+- En 4T 2025, el **36,3 % de los asalariados** no tenía descuento jubilatorio. [INDEC, mercado de trabajo, cuadro 1.5](https://www.indec.gob.ar/uploads/informesdeprensa/mercado_trabajo_eph_4trim25AF451E16DE.pdf)
+- En ese trimestre, el **64,5 % de las personas de 18 años o más** había completado al menos la secundaria. El indicador se calcula con los microdatos de la EPH.
+- El ingreso medio de la ocupación principal de asalariados con ingresos fue **$1.082.635 nominales**. En el tablero se expresa como **$1.111.838 a precios de diciembre de 2025**. [INDEC, distribución del ingreso, cuadro 6.1](https://biblioteca.indec.gob.ar/bases/minde/ingresos4trim25.pdf#page=11)
+
+El proyecto descarga las bases oficiales, vincula hogares y personas y calcula estimaciones con los ponderadores de cada indicador. Las mismas figuras se pueden explorar en Streamlit y en VS Code. La app permite filtrar por territorio y sexo, cambiar el trimestre y descargar los resultados en CSV.
+
+Las tasas laborales y el ingreso asalariado nominal se cotejaron con los informes del INDEC. Los indicadores con aperturas propias, como el ingreso por educación y sexo, se recalcularon por separado a partir de los microdatos.
 
 ## Ejecutar
 
@@ -41,6 +53,6 @@ Fuentes: [mercado de trabajo 4T2025](https://www.indec.gob.ar/uploads/informesde
 
 `app.py` muestra el tablero; `metrics.py` calcula indicadores; `charts.py` define los gráficos; `formatting.py` prepara las tablas; `ui.py` y `editorial.css` definen el diseño. `sync_sources.py` descarga las bases y `graficos_vscode.py` permite explorarlas en el editor. La configuración de Streamlit, las referencias, las dependencias y este README completan el proyecto.
 
-El repositorio contiene únicamente estos archivos de ejecución y documentación. Auditorías, pruebas de desarrollo, PDF, capturas, microdatos y archivos temporales se conservan fuera de la distribución. Las cifras y sus universos se revisaron contra las fuentes oficiales; no se validaron todas las combinaciones de filtros ni se estimaron intervalos de confianza para cada celda.
+El repositorio incluye el código, las referencias y una captura del panorama. Las estimaciones se verificaron en los ocho trimestres de la cobertura. La revisión de filtros abarcó selecciones representativas.
 
-Elaboración propia de **José Ignacio González Cabañas**. Este proyecto no es una publicación del INDEC. El repositorio contiene código ejecutable localmente; no implica que exista una demo alojada.
+**José Ignacio González Cabañas** · Elaboración propia con datos del INDEC.

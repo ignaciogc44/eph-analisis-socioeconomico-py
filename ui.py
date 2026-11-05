@@ -26,7 +26,7 @@ METRICS = {
     'Desocupación': ('Desocupación','search','Sobre la población activa'),
     'Sin descuento jubilatorio': ('Sin descuento jubilatorio','shield','Asalariados con respuesta válida'),
     'Ingreso laboral · asalariados con ingresos': ('Ingreso laboral medio','wallet','Asalariados · pesos de dic. 2025'),
-    'IPCF medio entre hogares': ('IPCF medio','house','Entre hogares · pesos de dic. 2025'),
+    'IPCF medio entre hogares': ('IPCF medio entre hogares','house','Pesos de dic. 2025'),
     'Secundaria finalizada · 18+': ('Secundaria completa','education','Personas de 18 años o más'),
 }
 
