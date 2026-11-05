@@ -24,6 +24,7 @@ VIEWS = {
  'Trabajo': {'Participación y evolución':PAGES[2], 'Composición del empleo':PAGES[3], 'Sectores de actividad':PAGES[4]},
  'Ingresos': {'Distribución y brechas':PAGES[5], 'Evolución por sector':PAGES[6]},
 }
+price_base = ref['price_base']
 periods = sorted(p.Periodo.unique())
 coverage = ' a '.join(f'{period[-2:]} {period[:4]}' for period in dict.fromkeys([periods[0], periods[-1]]))
 st.markdown(
@@ -85,7 +86,7 @@ if pt.empty or ht.empty:
     st.info('No hay observaciones para esta selección. Ajustá los filtros.');st.stop()
 
 def metric_grid(values):
-    st.markdown(metric_cards(values),unsafe_allow_html=True)
+    st.markdown(metric_cards(values, price_base),unsafe_allow_html=True)
 
 # Las figuras se construyen en charts.py, compartido con graficos_vscode.py.
 view_name='Panorama' if section=='Panorama' else page
@@ -98,7 +99,7 @@ values=charts.cards(view_name,pt,ht,ref,period)
 
 if values: metric_grid(values)
 if view_name in ['Panorama',PAGES[5]]:
-    income_context='Ingresos a precios de diciembre de 2025 · IPCF medio entre hogares.'
+    income_context = f'Ingresos a precios de {price_base} · IPCF medio entre hogares.'
     if sexes: income_context+=' El filtro de sexo no se aplica a hogares.'
     st.caption(income_context)
 try:
@@ -123,7 +124,7 @@ def render_table(spec):
             label,download=st.columns([4,1],vertical_alignment='center',gap='small')
             with label:
                 if 'Ingreso' in spec.rows:
-                    table_label = 'Datos · Pesos de diciembre de 2025'
+                    table_label = f'Datos · Pesos de {price_base}'
                 elif spec.identity in {'dwelling', 'tenure', 'housing'}:
                     table_label = f'Datos · {unit}'
                 elif spec.identity in {'overview_services', 'education', 'secondary', 'status_sex', 'population', 'inactivity', 'occupation', 'sectors'}:
@@ -132,7 +133,7 @@ def render_table(spec):
                     table_label = 'Datos del gráfico'
                 st.markdown('<div class="eph-table-label">'+icon('table')+table_label+'</div>',unsafe_allow_html=True)
             with download:
-                st.download_button('CSV',icon=':material/download:',type='tertiary',data=export_table(spec.rows).to_csv(index=False,decimal=',',sep=';').encode('utf-8-sig'),file_name=f'eph_{spec.identity}_{period}.csv',mime='text/csv',key='download_'+spec.identity,width='content')
+                st.download_button('CSV',icon=':material/download:',type='tertiary',data=export_table(spec.rows, price_base).to_csv(index=False,decimal=',',sep=';').encode('utf-8-sig'),file_name=f'eph_{spec.identity}_{period}.csv',mime='text/csv',key='download_'+spec.identity,width='content')
         st.dataframe(table,width='stretch',hide_index=True,row_height=30,column_config=config)
 
 for spec in specs:
@@ -141,7 +142,7 @@ for spec in specs:
         if 'Ingreso' in spec.rows:
             universe = 'PEA con ingresos · ' if spec.identity == 'income_education' else ''
             st.markdown(
-                f'<div class="eph-unit">{universe}Pesos de diciembre de 2025 · Ajustados por IPC nacional</div>',
+                f'<div class="eph-unit">{universe}Pesos de {html.escape(price_base)} · Ajustados por IPC nacional</div>',
                 unsafe_allow_html=True,
             )
         def render_figure():
@@ -171,4 +172,4 @@ with st.expander('Fuentes y metodología',icon=':material/menu_book:'):
     st.write('Cobertura: 31 aglomerados urbanos. Las estimaciones se recalculan para la población y el período seleccionados, con los ponderadores específicos de cada indicador.')
     st.write('Los ingresos se expresan en pesos constantes. El IPCF se promedia entre hogares; el ingreso laboral corresponde a asalariados ocupados con ingresos positivos. Las notas de cada gráfico detallan su universo.')
 
-st.markdown('<div class="eph-footer">'+icon('table')+'<span>Elaboración propia en base a INDEC · Encuesta Permanente de Hogares.<br>31 aglomerados urbanos · Ingresos expresados a precios de diciembre de 2025.</span></div>',unsafe_allow_html=True)
+st.markdown('<div class="eph-footer">'+icon('table')+f'<span>Elaboración propia en base a INDEC · Encuesta Permanente de Hogares.<br>31 aglomerados urbanos · Ingresos expresados a precios de {html.escape(price_base)}.</span></div>',unsafe_allow_html=True)

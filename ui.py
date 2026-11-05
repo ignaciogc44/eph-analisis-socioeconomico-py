@@ -25,16 +25,16 @@ METRICS = {
     'Empleo': ('Empleo','briefcase','Sobre la población total'),
     'Desocupación': ('Desocupación','search','Sobre la población activa'),
     'Sin descuento jubilatorio': ('Sin descuento jubilatorio','shield','Asalariados con respuesta válida'),
-    'Ingreso laboral · asalariados con ingresos': ('Ingreso laboral medio','wallet','Asalariados · pesos de dic. 2025'),
-    'IPCF medio entre hogares': ('IPCF medio entre hogares','house','Pesos de dic. 2025'),
+    'Ingreso laboral · asalariados con ingresos': ('Ingreso laboral medio','wallet','Asalariados · pesos de {price_base}'),
+    'IPCF medio entre hogares': ('IPCF medio entre hogares','house','Pesos de {price_base}'),
     'Secundaria finalizada · 18+': ('Secundaria completa','education','Personas de 18 años o más'),
 }
 
 CHART_ICONS = {'labor_history':'chart','overview_services':'house','dwelling':'house','tenure':'house','housing':'pin','education':'education','secondary':'education','status_sex':'people','inactivity':'people','occupation':'briefcase','sectors':'building','deciles':'wallet','income_education':'education','income_history':'chart','population':'people'}
 
-def metric_cards(values):
+def metric_cards(values, price_base):
     cards=[]
     for label,value in values:
         title,glyph,context=METRICS.get(label,(label,'chart',''))
-        cards.append('<div class="eph-metric"><div class="eph-metric-top"><span class="eph-metric-icon">'+icon(glyph)+'</span><span class="eph-metric-label">'+html.escape(title)+'</span></div><div class="eph-metric-value">'+html.escape(str(value))+'</div><div class="eph-metric-context">'+html.escape(context)+'</div></div>')
+        cards.append('<div class="eph-metric"><div class="eph-metric-top"><span class="eph-metric-icon">'+icon(glyph)+'</span><span class="eph-metric-label">'+html.escape(title)+'</span></div><div class="eph-metric-value">'+html.escape(str(value))+'</div><div class="eph-metric-context">'+html.escape(context.format(price_base=price_base))+'</div></div>')
     return '<div class="eph-metrics eph-metrics-'+str(len(cards))+'">'+''.join(cards)+'</div>'

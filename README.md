@@ -10,7 +10,7 @@ Tablero interactivo en Python sobre vivienda, educación, mercado de trabajo e i
 
 - En 2T 2026, la tasa de actividad fue de **48,9 %**, la de empleo de **45,0 %** y la de desocupación de **7,9 %**. [INDEC, mercado de trabajo, cuadro 1.1](https://www.indec.gob.ar/uploads/informesdeprensa/mercado_trabajo_eph_2trim26433FCBC5A8.pdf)
 - En ese trimestre, el **66,1 % de las personas de 18 años o más** había completado al menos la secundaria. El indicador se calcula con los microdatos de la EPH.
-- El ingreso medio de la ocupación principal de asalariados con ingresos fue **$1.161.833 nominales**. En el tablero se expresa como **$1.013.827 a precios de diciembre de 2025**. [INDEC, distribución del ingreso, cuadro 6.1](https://www.indec.gob.ar/uploads/informesdeprensa/ingresos2trim26B36ABAB2C6.pdf#page=11)
+- El ingreso medio de la ocupación principal de asalariados con ingresos fue **$1.161.833 nominales**. En el tablero se expresa como **$1.184.615 a precios de junio de 2026**. [INDEC, distribución del ingreso, cuadro 6.1](https://www.indec.gob.ar/uploads/informesdeprensa/ingresos2trim26B36ABAB2C6.pdf#page=11)
 
 El proyecto descarga las bases oficiales, vincula hogares y personas y calcula estimaciones con los ponderadores de cada indicador. Las mismas figuras se pueden explorar en Streamlit y en VS Code. La app permite filtrar por territorio y sexo, cambiar el trimestre y descargar los resultados en CSV.
 
@@ -46,7 +46,7 @@ Los microdatos se descargan directamente de [INDEC](https://www.indec.gob.ar/ind
 - IPCF: promedio entre hogares y deciles nacionales de hogares, **PONDIH**. El filtro de sexo no se aplica a hogares.
 - Las comparaciones por sexo incluyen el total de ambos sexos del mismo período y territorio.
 
-**Ajuste por inflación:** ingreso nominal × IPC diciembre de 2025 / IPC medio del trimestre. Es una aproximación trimestral; los ingresos relevados se refieren al mes anterior a la entrevista. Los deciles conservan los cortes nacionales. Los indicadores de vivienda son trimestrales; el informe de condiciones de vida del INDEC es semestral. Las bases de 2026 no publican las categorías de inactividad.
+**Ajuste por inflación:** ingreso nominal × IPC junio de 2026 / IPC medio del trimestre. Es una aproximación trimestral; los ingresos relevados se refieren al mes anterior a la entrevista. Los deciles conservan los cortes nacionales. Los indicadores de vivienda son trimestrales; el informe de condiciones de vida del INDEC es semestral. Las bases de 2026 no publican las categorías de inactividad.
 
 Fuentes: [mercado de trabajo 2T 2026](https://www.indec.gob.ar/uploads/informesdeprensa/mercado_trabajo_eph_2trim26433FCBC5A8.pdf), [distribución del ingreso 2T 2026](https://www.indec.gob.ar/uploads/informesdeprensa/ingresos2trim26B36ABAB2C6.pdf), [condiciones de vida 1S 2026](https://www.indec.gob.ar/uploads/informesdeprensa/eph_indicadores_hogares_11_269E1CF84248.pdf) e [IPC nacional](https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_divisiones.xls).
 

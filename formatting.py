@@ -66,9 +66,9 @@ def display_table(df):
     return styled
 
 
-def export_table(df):
+def export_table(df, price_base):
     df=public_table(df)
-    names={c:c+(' (%)' if unit=='percent' else ' ($ ARS, dic. 2025)') for c,unit in df.attrs['units'].items()}
+    names={c:c+(' (%)' if unit=='percent' else f' ($ ARS, {price_base})') for c,unit in df.attrs['units'].items()}
     return df.rename(columns=names)
 
 

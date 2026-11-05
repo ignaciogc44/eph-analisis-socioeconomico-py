@@ -113,8 +113,8 @@ def build(view,p,h,history,ref,period,unit='Personas',territory='Región',sector
     specs=[]
     population=p if population is None else population
     def chart(identity,title,rows,note,kind=None,**kwargs):
-        if 'Ingreso' in rows and 'Pesos de diciembre de 2025' not in note:
-            note='Pesos de diciembre de 2025. '+note
+        if 'Ingreso' in rows:
+            note = f"Pesos de {ref['price_base']}. {note}"
         specs.append(Chart(identity,title,rows,note,figure(rows,kind,**kwargs) if kind else None))
     def bars(identity,title,rows,label,note,value='Porcentaje',color=None):
         chart(identity,title,rows,note,'bar',x=value,y=label,color=color,orientation='h',barmode='group',color_discrete_map={'Total':'#8c8c88','Mujer':'#F34B18','Varón':'#101010'},category_orders={'Sexo':['Total','Mujer','Varón']})
@@ -166,7 +166,7 @@ def build(view,p,h,history,ref,period,unit='Personas',territory='Región',sector
     elif view=='Ingresos y distribución':
         if period not in ref['deflators']: raise ValueError('No hay IPC de referencia para este período.')
         df=m.grouped_income(h.loc[h.DECCFR.between(1,10)],['DECCFR'],'IPCF','PONDIH',ref).rename(columns={'DECCFR':'Decil'})
-        chart('deciles','IPCF medio de hogares por decil de hogares',df,'Media del IPCF entre hogares, ponderada por PONDIH. No equivale al promedio por personas del cuadro 9 del INDEC. Deciles nacionales originales de la EPH: los filtros no recalculan los cortes. Pesos de diciembre de 2025; IPC nacional medio del trimestre.','bar',x='Ingreso',y='Decil',orientation='h')
+        chart('deciles','IPCF medio de hogares por decil de hogares',df,'Media del IPCF entre hogares, ponderada por PONDIH. No equivale al promedio por personas del cuadro 9 del INDEC. Deciles nacionales originales de la EPH: los filtros no recalculan los cortes. Ajuste por IPC nacional medio del trimestre.','bar',x='Ingreso',y='Decil',orientation='h')
         df=m.grouped_income(m.eligible_individual(p),['NIVEL_ED','Sexo'],'P47T','PONDII',ref)
         overall=m.grouped_income(m.eligible_individual(population),['NIVEL_ED'],'P47T','PONDII',ref).assign(Sexo='Total')
         df=pd.concat([overall,df],ignore_index=True)

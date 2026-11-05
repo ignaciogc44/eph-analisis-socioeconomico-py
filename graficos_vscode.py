@@ -35,7 +35,8 @@ if pt.empty or ht.empty: raise ValueError('No hay datos para estos filtros.')
 def mostrar(view):
     display(Markdown('## '+view+' · '+PERIODO))
     for label,value in charts.cards(view,pt,ht,ref,PERIODO):
-        display(Markdown(f'**{label}:** {value}'))
+        unit = f" · Pesos de {ref['price_base']}" if value.startswith('$') else ''
+        display(Markdown(f'**{label}:** {value}{unit}'))
     for spec in charts.build(view,pt,ht,history,ref,PERIODO,UNIDAD,TERRITORIO,SECTORES,population=pt_total):
         display(Markdown('### '+spec.title))
         if spec.figure is not None: display(spec.figure)

@@ -207,22 +207,23 @@
     "88": "Salud Humana y Servicios Sociales"
   },
   "deflators": {
-    "2024 - 1T": 0.47570672281584236,
-    "2024 - 2T": 0.6012247813121638,
-    "2024 - 3T": 0.6788747684375911,
-    "2024 - 4T": 0.7409863080314758,
-    "2025 - 1T": 0.7993130904574873,
-    "2025 - 2T": 0.8614004864195859,
-    "2025 - 3T": 0.9090108423876483,
-    "2025 - 4T": 0.9737346992285911,
-    "2026 - 1T": 1.0606176972491657,
-    "2026 - 2T": 1.1459874583202485
+    "2024 - 1T": 0.40712306985211455,
+    "2024 - 2T": 0.5145449221110372,
+    "2024 - 3T": 0.5809999449565295,
+    "2024 - 4T": 0.6341567313963393,
+    "2025 - 1T": 0.6840744171824762,
+    "2025 - 2T": 0.7372105408293955,
+    "2025 - 3T": 0.7779568102193558,
+    "2025 - 4T": 0.833349290556352,
+    "2026 - 1T": 0.9077061814211987,
+    "2026 - 2T": 0.9807680019354648
   },
-  "ipc_mode": "IPC nacional oficial INDEC; promedio trimestral / diciembre de 2025",
-  "price_base": "diciembre de 2025",
-  "ipc_reference_value": 10121.3715,
+  "ipc_mode": "IPC nacional oficial INDEC; promedio trimestral / junio de 2026",
+  "price_base": "junio de 2026",
+  "ipc_reference_value": 11826.4103,
   "source_home": "https://www.indec.gob.ar/indec/web/Institucional-Indec-BasesDeDatos-1",
   "api_docs": "https://api.indec.gob.ar/docs",
   "ipc_source": "https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_divisiones.xls",
-  "ipc_source_sha256": "f2d39fa932813261c50cec6bc7f6499d2e054e798e3a8379d16ed87fa7682560"
+  "ipc_source_sha256": "f2d39fa932813261c50cec6bc7f6499d2e054e798e3a8379d16ed87fa7682560",
+  "price_base_month": "2026-06-01"
 }
