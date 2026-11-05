@@ -19,6 +19,9 @@ class Chart:
     figure: object = None
 
 def figure(rows,kind,**kwargs):
+    is_decile_chart = kind == 'bar' and 'Decil' in rows
+    if is_decile_chart:
+        rows = rows.assign(Decil=rows.Decil.astype(str))
     kwargs.setdefault('color_discrete_sequence',PALETTE)
     f=getattr(px,kind)(rows,template='plotly_white',**kwargs)
     f.update_layout(font=dict(family='Arial, Helvetica, sans-serif',size=13,color='#101010'),paper_bgcolor='white',plot_bgcolor='white',legend_title_text='',hoverlabel=dict(bgcolor='white'),height=285,autosize=True,legend=dict(orientation='h',yanchor='top',y=-.32,x=0,entrywidth=0,entrywidthmode='pixels'),margin=dict(l=8,r=40,t=20,b=85),dragmode=False,bargap=.35)
@@ -53,9 +56,10 @@ def figure(rows,kind,**kwargs):
                 trace.textfont=dict(size=11)
             if axis=='x': f.update_xaxes(tickformat='.2s',nticks=4)
             else: f.update_yaxes(tickformat='.2s',nticks=5)
-    if kind=='bar' and 'Decil' in rows:
-        f.update_xaxes(tickmode='array',tickvals=list(range(1,11)),ticktext=[str(x) for x in range(1,11)],title_text='Decil de hogares')
-        f.update_yaxes(title_text='')
+    if is_decile_chart:
+        f.update_yaxes(title_text='Decil de hogares', type='category')
+        f.update_layout(margin=dict(r=70, b=30))
+        f.update_traces(textangle=0)
     if kind=='line':
         rate_colors={'Actividad':'#101010','Empleo':'#9c9c97','Desocupación':'#F34B18','Sin descuento jubilatorio':'#a57020'}
         for trace in f.data:
@@ -153,13 +157,16 @@ def build(view,p,h,history,ref,period,unit='Personas',territory='Región',sector
         for identity,title,label,d in [
             ('inactivity','Categorías de inactividad · 10 años o más','Categoría de inactividad',p.loc[p.ESTADO.eq(3)&p['Categoría de inactividad'].notna()]),
             ('occupation','Categoría ocupacional · ocupados','Categoría ocupacional',p.loc[p.ESTADO.eq(1)&p['Categoría ocupacional'].notna()])]:
+            if identity == 'inactivity' and p.CAT_INAC.isna().all():
+                chart(identity,title,pd.DataFrame(),'La base pública de la EPH no incluye la categoría de inactividad para este período.')
+                continue
             bars(identity,title,m.distribution(d,label).sort_values('Porcentaje',ascending=False),label,'Ponderación PONDERA; categorías válidas dentro del universo indicado. Los porcentajes pueden no sumar 100% por redondeo.')
     elif view=='Empleo por sector de actividad':
         bars('sectors','Distribución de ocupados por sector',m.distribution(p.loc[p.ESTADO.eq(1)],'Sector').sort_values('Porcentaje',ascending=False),'Sector','Ocupados, ponderación PONDERA. Clasificación CAES; actividad no especificada permanece en el total.')
     elif view=='Ingresos y distribución':
         if period not in ref['deflators']: raise ValueError('No hay IPC de referencia para este período.')
         df=m.grouped_income(h.loc[h.DECCFR.between(1,10)],['DECCFR'],'IPCF','PONDIH',ref).rename(columns={'DECCFR':'Decil'})
-        chart('deciles','IPCF medio de hogares por decil de hogares',df,'Media del IPCF entre hogares, ponderada por PONDIH. No equivale al promedio por personas del cuadro 9 del INDEC. Deciles nacionales originales de la EPH: los filtros no recalculan los cortes. Pesos de diciembre de 2025; IPC nacional medio del trimestre.','bar',x='Decil',y='Ingreso')
+        chart('deciles','IPCF medio de hogares por decil de hogares',df,'Media del IPCF entre hogares, ponderada por PONDIH. No equivale al promedio por personas del cuadro 9 del INDEC. Deciles nacionales originales de la EPH: los filtros no recalculan los cortes. Pesos de diciembre de 2025; IPC nacional medio del trimestre.','bar',x='Ingreso',y='Decil',orientation='h')
         df=m.grouped_income(m.eligible_individual(p),['NIVEL_ED','Sexo'],'P47T','PONDII',ref)
         overall=m.grouped_income(m.eligible_individual(population),['NIVEL_ED'],'P47T','PONDII',ref).assign(Sexo='Total')
         df=pd.concat([overall,df],ignore_index=True)

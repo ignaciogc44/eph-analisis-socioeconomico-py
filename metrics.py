@@ -17,7 +17,12 @@ HCOLS = KEYS + ['PONDERA','PONDIH','IPCF','DECCFR','AGLOMERADO','REGION','IV1','
 def read_microdata(path, cols):
     d = pd.read_csv(path, sep=';', encoding='latin1', usecols=lambda c:c in cols, low_memory=False)
     missing = set(cols)-set(d.columns)
-    if missing: raise ValueError(f'{path.name}: faltan columnas {sorted(missing)}')
+    # La EPH dejó de incluir CAT_INAC en las bases públicas de 2026.
+    if missing == {'CAT_INAC'} and not d.empty and d.ANO4.ge(2026).all():
+        d['CAT_INAC'] = np.nan
+        missing.clear()
+    if missing:
+        raise ValueError(f'{path.name}: faltan columnas {sorted(missing)}')
     for c in d.columns:
         if c != 'CODUSU': d[c] = pd.to_numeric(d[c].astype(str).str.replace(',','.',regex=False), errors='coerce')
     return d

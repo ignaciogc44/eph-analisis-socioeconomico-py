@@ -20,7 +20,7 @@ p,h,ref=m.load_data()
 print(f'Bases cargadas: {len(p):,} registros de personas, {len(h):,} de hogares.')
 
 # %% Filtros: editar y volver a ejecutar para actualizar la selección
-PERIODO='2025 - 4T'
+PERIODO = max(p.Periodo)        # Ejemplo: '2025 - 4T'
 REGIONES=[]                 # Ejemplo: ['Cuyo']; vacío = todas
 AGLOMERADOS=[]              # Ejemplo: ['Gran Córdoba']
 SEXOS=[]                    # Ejemplo: ['Mujer']; solo personas
@@ -39,7 +39,7 @@ def mostrar(view):
     for spec in charts.build(view,pt,ht,history,ref,PERIODO,UNIDAD,TERRITORIO,SECTORES,population=pt_total):
         display(Markdown('### '+spec.title))
         if spec.figure is not None: display(spec.figure)
-        else: display(display_table(spec.rows))
+        elif not spec.rows.empty: display(display_table(spec.rows))
         display(Markdown(spec.note))
 
 # %% Panorama

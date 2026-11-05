@@ -24,7 +24,8 @@ VIEWS = {
  'Trabajo': {'Participación y evolución':PAGES[2], 'Composición del empleo':PAGES[3], 'Sectores de actividad':PAGES[4]},
  'Ingresos': {'Distribución y brechas':PAGES[5], 'Evolución por sector':PAGES[6]},
 }
-coverage = f'{int(p.ANO4.min())}–{int(p.ANO4.max())}'
+periods = sorted(p.Periodo.unique())
+coverage = ' a '.join(f'{period[-2:]} {period[:4]}' for period in dict.fromkeys([periods[0], periods[-1]]))
 st.markdown(
     '<div class="eph-appbar"><div class="eph-appbar-brand"><span class="eph-appmark">'+icon('chart')+'</span>'
     '<div><h1>Análisis socioeconómico de la EPH</h1>'
@@ -39,7 +40,6 @@ def prune_cities():
     valid=set(m.select(p,regions=st.session_state.get('regions',[])).Aglomerado)
     st.session_state['cities']=[x for x in st.session_state.get('cities',[]) if x in valid]
 
-periods=sorted(p.Periodo.unique())
 unit='Personas';territory='Región';sectors=None
 if st.session_state.get('section') not in SECTIONS:
     st.session_state['section']='Condiciones de vida' if st.session_state.get('section')=='Vida cotidiana' else 'Panorama'
@@ -156,6 +156,8 @@ for spec in specs:
                 with details:render_table(spec)
         elif spec.figure is not None:
             render_figure();render_table(spec)
+        elif spec.rows.empty:
+            st.info(spec.note)
         else:
             st.caption(spec.note);render_table(spec)
 if section=='Panorama':
@@ -165,7 +167,7 @@ if section=='Panorama':
         col.button(label,icon={'Condiciones de vida':':material/home:','Trabajo':':material/work_outline:','Ingresos':':material/payments:'}[destination],on_click=navigate,args=(destination,),width='stretch')
 
 with st.expander('Fuentes y metodología',icon=':material/menu_book:'):
-    st.markdown('[Mercado de trabajo · INDEC](https://www.indec.gob.ar/uploads/informesdeprensa/mercado_trabajo_eph_4trim25AF451E16DE.pdf) · [Condiciones de vida · INDEC](https://www.indec.gob.ar/uploads/informesdeprensa/eph_indicadores_hogares_04_266C2447C938.pdf) · [Encuesta Permanente de Hogares · INDEC](https://www.indec.gob.ar/indec/web/Institucional-Indec-BasesDeDatos-1) · [Distribución del ingreso](https://biblioteca.indec.gob.ar/bases/minde/ingresos4trim25.pdf)')
+    st.markdown('[Mercado de trabajo · INDEC](https://www.indec.gob.ar/uploads/informesdeprensa/mercado_trabajo_eph_2trim26433FCBC5A8.pdf) · [Condiciones de vida · INDEC](https://www.indec.gob.ar/uploads/informesdeprensa/eph_indicadores_hogares_11_269E1CF84248.pdf) · [Encuesta Permanente de Hogares · INDEC](https://www.indec.gob.ar/indec/web/Institucional-Indec-BasesDeDatos-1) · [Distribución del ingreso · INDEC](https://www.indec.gob.ar/uploads/informesdeprensa/ingresos2trim26B36ABAB2C6.pdf)')
     st.write('Cobertura: 31 aglomerados urbanos. Las estimaciones se recalculan para la población y el período seleccionados, con los ponderadores específicos de cada indicador.')
     st.write('Los ingresos se expresan en pesos constantes. El IPCF se promedia entre hogares; el ingreso laboral corresponde a asalariados ocupados con ingresos positivos. Las notas de cada gráfico detallan su universo.')
 

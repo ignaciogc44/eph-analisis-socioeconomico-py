@@ -214,13 +214,15 @@
     "2025 - 1T": 0.7993130904574873,
     "2025 - 2T": 0.8614004864195859,
     "2025 - 3T": 0.9090108423876483,
-    "2025 - 4T": 0.9737346992285911
+    "2025 - 4T": 0.9737346992285911,
+    "2026 - 1T": 1.0606176972491657,
+    "2026 - 2T": 1.1459874583202485
   },
   "ipc_mode": "IPC nacional oficial INDEC; promedio trimestral / diciembre de 2025",
   "price_base": "diciembre de 2025",
   "ipc_reference_value": 10121.3715,
   "source_home": "https://www.indec.gob.ar/indec/web/Institucional-Indec-BasesDeDatos-1",
   "api_docs": "https://api.indec.gob.ar/docs",
-  "ipc_source": "https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_01_26.xls",
-  "ipc_source_sha256": "bcefb18365a35f8067f759290eba5dd908ec57a65726fdff506b9fe69094dfd8"
+  "ipc_source": "https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_divisiones.xls",
+  "ipc_source_sha256": "f2d39fa932813261c50cec6bc7f6499d2e054e798e3a8379d16ed87fa7682560"
 }
