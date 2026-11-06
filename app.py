@@ -170,6 +170,14 @@ if section=='Panorama':
 with st.expander('Fuentes y metodología',icon=':material/menu_book:'):
     st.markdown('[Mercado de trabajo · INDEC](https://www.indec.gob.ar/uploads/informesdeprensa/mercado_trabajo_eph_2trim26433FCBC5A8.pdf) · [Condiciones de vida · INDEC](https://www.indec.gob.ar/uploads/informesdeprensa/eph_indicadores_hogares_11_269E1CF84248.pdf) · [Encuesta Permanente de Hogares · INDEC](https://www.indec.gob.ar/indec/web/Institucional-Indec-BasesDeDatos-1) · [Distribución del ingreso · INDEC](https://www.indec.gob.ar/uploads/informesdeprensa/ingresos2trim26B36ABAB2C6.pdf)')
     st.write('Cobertura: 31 aglomerados urbanos. Las estimaciones se recalculan para la población y el período seleccionados, con los ponderadores específicos de cada indicador.')
-    st.write('Para los ingresos a precios constantes se usa el IPC nacional promedio de tres meses con un mes de rezago. Por ejemplo, el segundo trimestre usa marzo, abril y mayo. El IPCF se promedia entre hogares; el ingreso laboral corresponde a asalariados ocupados con ingresos positivos. Las notas de cada gráfico detallan su universo.')
+    st.markdown(
+        f'**Ajuste de ingresos.** Se multiplica el ingreso nominal por el IPC nacional de {price_base} '
+        'y se divide por el IPC promedio de los tres meses de referencia aproximados. '
+        'Para 2T 2026 se promedian marzo, abril y mayo porque la EPH releva ingresos '
+        'del mes anterior al de la semana de referencia. Se aplica un solo factor a todo el trimestre. '
+        '[Período de referencia en la EPH](https://www.indec.gob.ar/uploads/informesdeprensa/ingresos2trim26B36ABAB2C6.pdf#page=17) · '
+        '[Serie nacional del IPC](https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_divisiones.xls)'
+    )
+    st.write('El IPCF se promedia entre hogares. El ingreso laboral corresponde a asalariados ocupados con ingresos positivos.')
 
 st.markdown('<div class="eph-footer">'+icon('table')+f'<span>Elaboración propia en base a INDEC · Encuesta Permanente de Hogares.<br>31 aglomerados urbanos · Ingresos expresados a precios de {html.escape(price_base)}.</span></div>',unsafe_allow_html=True)

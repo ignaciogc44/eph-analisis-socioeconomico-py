@@ -48,7 +48,9 @@ Los microdatos se descargan directamente de [INDEC](https://www.indec.gob.ar/ind
 - IPCF: promedio entre hogares y deciles nacionales de hogares, **PONDIH**. El filtro de sexo no se aplica a hogares.
 - Las comparaciones por sexo incluyen el total de ambos sexos del mismo período y territorio.
 
-**Ajuste por inflación:** ingreso nominal × IPC junio de 2026 / IPC nacional promedio de tres meses con un mes de rezago. Por ejemplo, para 2T 2026 se promedian marzo, abril y mayo. Es una aproximación al período de referencia de los ingresos de la EPH. Los deciles conservan los cortes nacionales. Los indicadores de vivienda son trimestrales; el informe de condiciones de vida del INDEC es semestral. Las bases de 2026 no publican las categorías de inactividad.
+Los ingresos reales se expresan a precios de **junio de 2026**. Para calcularlos se multiplica el ingreso nominal por el IPC nacional de junio de 2026 y se divide por el promedio de los índices mensuales de los tres meses de referencia aproximados. En el **2T 2026** el denominador es el promedio de **marzo, abril y mayo**, porque la EPH releva ingresos del mes anterior al de la semana de referencia. Se aplica un solo factor a todo el trimestre. [Período de referencia en la EPH](https://www.indec.gob.ar/uploads/informesdeprensa/ingresos2trim26B36ABAB2C6.pdf#page=17) · [Serie nacional del IPC](https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_divisiones.xls)
+
+Los deciles conservan los cortes nacionales. Los indicadores de vivienda son trimestrales; el informe de condiciones de vida del INDEC es semestral. Las bases de 2026 no publican las categorías de inactividad.
 
 Fuentes: [mercado de trabajo 2T 2026](https://www.indec.gob.ar/uploads/informesdeprensa/mercado_trabajo_eph_2trim26433FCBC5A8.pdf), [distribución del ingreso 2T 2026](https://www.indec.gob.ar/uploads/informesdeprensa/ingresos2trim26B36ABAB2C6.pdf), [condiciones de vida 1S 2026](https://www.indec.gob.ar/uploads/informesdeprensa/eph_indicadores_hogares_11_269E1CF84248.pdf) e [IPC nacional](https://www.indec.gob.ar/ftp/cuadros/economia/sh_ipc_divisiones.xls).
 
