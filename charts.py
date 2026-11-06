@@ -166,7 +166,7 @@ def build(view,p,h,history,ref,period,unit='Personas',territory='Región',sector
     elif view=='Ingresos y distribución':
         if period not in ref['deflators']: raise ValueError('No hay IPC de referencia para este período.')
         df=m.grouped_income(h.loc[h.DECCFR.between(1,10)],['DECCFR'],'IPCF','PONDIH',ref).rename(columns={'DECCFR':'Decil'})
-        chart('deciles','IPCF medio de hogares por decil de hogares',df,'Media del IPCF entre hogares, ponderada por PONDIH. No equivale al promedio por personas del cuadro 9 del INDEC. Deciles nacionales originales de la EPH: los filtros no recalculan los cortes. Ajuste por IPC nacional medio del trimestre.','bar',x='Ingreso',y='Decil',orientation='h')
+        chart('deciles','IPCF medio de hogares por decil de hogares',df,'Media del IPCF entre hogares, ponderada por PONDIH. No equivale al promedio por personas del cuadro 9 del INDEC. Deciles nacionales originales de la EPH: los filtros no recalculan los cortes. Ajuste por IPC nacional promedio de tres meses con rezago de un mes.','bar',x='Ingreso',y='Decil',orientation='h')
         df=m.grouped_income(m.eligible_individual(p),['NIVEL_ED','Sexo'],'P47T','PONDII',ref)
         overall=m.grouped_income(m.eligible_individual(population),['NIVEL_ED'],'P47T','PONDII',ref).assign(Sexo='Total')
         df=pd.concat([overall,df],ignore_index=True)
