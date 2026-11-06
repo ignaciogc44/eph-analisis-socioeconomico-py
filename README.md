@@ -12,7 +12,7 @@ Tablero interactivo en Python sobre vivienda, educación, mercado de trabajo e i
 - En ese trimestre, el **66,1 % de las personas de 18 años o más** había completado al menos la secundaria. El indicador se calcula con los microdatos de la EPH.
 - El ingreso medio de la ocupación principal de asalariados con ingresos fue **$1.161.833 nominales**. En el tablero se expresa como **$1.184.615 a precios de junio de 2026**. [INDEC, distribución del ingreso, cuadro 6.1](https://www.indec.gob.ar/uploads/informesdeprensa/ingresos2trim26B36ABAB2C6.pdf#page=11)
 
-El proyecto descarga las bases oficiales, vincula hogares y personas y calcula estimaciones con los ponderadores de cada indicador. Las mismas figuras se pueden explorar en Streamlit y en VS Code. La app permite filtrar por territorio y sexo, cambiar el trimestre y descargar los resultados en CSV.
+El proyecto descarga las bases oficiales, vincula hogares y personas y calcula estimaciones con los ponderadores de cada indicador. El tablero y la exploración por celdas comparten gráficos y cálculos. La app permite filtrar por territorio y sexo, cambiar el trimestre y descargar los resultados en CSV.
 
 Las tasas laborales y el ingreso asalariado nominal se cotejaron con los informes del INDEC. Los indicadores con aperturas propias, como el ingreso por educación y sexo, se recalcularon por separado a partir de los microdatos.
 
@@ -34,7 +34,7 @@ foreach ($year in 2024,2025,2026) {
 
 Abrir `http://127.0.0.1:8501`. En Linux/macOS, usar `.venv/bin/python` en lugar de `.venv\Scripts\python` y descargar cada trimestre con el mismo comando `sync_sources.py eph`.
 
-Para ver los gráficos dentro de **VS Code**, abrir `graficos_vscode.py`, seleccionar el intérprete `.venv` y ejecutar las celdas de preparación, filtros y análisis. La web y VS Code comparten gráficos y cálculos.
+Para explorar los gráficos y las tablas por celdas, abrir `exploracion_eph.py` en un entorno con soporte para celdas de Python. Seleccionar el intérprete de `.venv` y ejecutar las celdas de preparación, filtros y análisis.
 
 ## Datos y método
 
@@ -52,7 +52,7 @@ Fuentes: [mercado de trabajo 2T 2026](https://www.indec.gob.ar/uploads/informesd
 
 ## Archivos
 
-`app.py` muestra el tablero; `metrics.py` calcula indicadores; `charts.py` define los gráficos; `formatting.py` prepara las tablas; `ui.py` y `editorial.css` definen el diseño. `sync_sources.py` descarga las bases y `graficos_vscode.py` permite explorarlas en el editor. La configuración de Streamlit, las referencias, las dependencias y este README completan el proyecto.
+`app.py` muestra el tablero; `metrics.py` calcula indicadores; `charts.py` define los gráficos; `formatting.py` prepara las tablas; `ui.py` y `editorial.css` definen el diseño. `sync_sources.py` descarga las bases y `exploracion_eph.py` permite explorar los indicadores por celdas. La configuración de Streamlit, las referencias, las dependencias y este README completan el proyecto.
 
 El repositorio incluye el código, las referencias y una captura del panorama. Las estimaciones se verificaron en los diez trimestres de la cobertura. La revisión de filtros abarcó selecciones representativas.
 

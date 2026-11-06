@@ -88,7 +88,7 @@ if pt.empty or ht.empty:
 def metric_grid(values):
     st.markdown(metric_cards(values, price_base),unsafe_allow_html=True)
 
-# Las figuras se construyen en charts.py, compartido con graficos_vscode.py.
+# Las figuras se construyen en charts.py, compartido con exploracion_eph.py.
 view_name='Panorama' if section=='Panorama' else page
 if page==PAGES[0] and unit=='Hogares' and sexes:
     st.caption('El filtro de sexo no se aplica a hogares.')

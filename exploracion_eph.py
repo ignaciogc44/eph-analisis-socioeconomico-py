@@ -1,7 +1,7 @@
 # %% [markdown]
-# # EPH: exploración dentro de VS Code
-# Ejecutar celdas con Ejecutar celda o Shift+Enter; elegir el kernel .venv.
-# Las figuras aparecen en la ventana interactiva como en un notebook.
+# # Exploración de la EPH
+# Seleccionar el intérprete de .venv y ejecutar las celdas en orden.
+# Usar un entorno compatible con celdas de Python y salidas interactivas.
 # charts.py es la única implementación, compartida con la web.
 # Este archivo no publica datos ni abre un navegador.
 

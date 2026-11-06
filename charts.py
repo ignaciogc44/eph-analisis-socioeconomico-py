@@ -1,4 +1,4 @@
-"""Única definición de datos, títulos y figuras para Streamlit y VS Code."""
+"""Única definición de datos, títulos y figuras para el tablero y la exploración por celdas."""
 from dataclasses import dataclass
 import textwrap
 import pandas as pd
